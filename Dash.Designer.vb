@@ -22,6 +22,7 @@ Partial Class Dash
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -32,14 +33,17 @@ Partial Class Dash
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DirectorySearcher1 = New System.DirectoryServices.DirectorySearcher()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -47,10 +51,10 @@ Partial Class Dash
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -143,7 +147,6 @@ Partial Class Dash
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.Controls.Add(Me.DataGridView1)
         Me.Panel3.Controls.Add(Me.Panel7)
         Me.Panel3.Controls.Add(Me.Panel6)
         Me.Panel3.Controls.Add(Me.Panel5)
@@ -158,28 +161,32 @@ Partial Class Dash
         Me.Panel3.Size = New System.Drawing.Size(570, 426)
         Me.Panel3.TabIndex = 1
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(8, 158)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(554, 164)
-        Me.DataGridView1.TabIndex = 10
-        '
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel7.Controls.Add(Me.Label10)
         Me.Panel7.Controls.Add(Me.Label6)
         Me.Panel7.Location = New System.Drawing.Point(428, 52)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(134, 100)
         Me.Panel7.TabIndex = 9
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(3, 31)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(29, 31)
+        Me.Label10.TabIndex = 3
+        Me.Label10.Text = "0"
+        '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(8, 8)
+        Me.Label6.Location = New System.Drawing.Point(7, 8)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(87, 13)
         Me.Label6.TabIndex = 2
@@ -188,11 +195,23 @@ Partial Class Dash
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.DarkRed
+        Me.Panel6.Controls.Add(Me.Label9)
         Me.Panel6.Controls.Add(Me.Label5)
         Me.Panel6.Location = New System.Drawing.Point(288, 52)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(134, 100)
         Me.Panel6.TabIndex = 9
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(4, 31)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(29, 31)
+        Me.Label9.TabIndex = 2
+        Me.Label9.Text = "0"
         '
         'Label5
         '
@@ -207,17 +226,29 @@ Partial Class Dash
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel5.Controls.Add(Me.Label8)
         Me.Panel5.Controls.Add(Me.Label4)
         Me.Panel5.Location = New System.Drawing.Point(148, 52)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(134, 100)
         Me.Panel5.TabIndex = 8
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(3, 31)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(29, 31)
+        Me.Label8.TabIndex = 2
+        Me.Label8.Text = "0"
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(8, 9)
+        Me.Label4.Location = New System.Drawing.Point(6, 9)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(78, 13)
         Me.Label4.TabIndex = 1
@@ -226,11 +257,23 @@ Partial Class Dash
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.DarkRed
+        Me.Panel4.Controls.Add(Me.Label7)
         Me.Panel4.Controls.Add(Me.Label3)
         Me.Panel4.Location = New System.Drawing.Point(8, 52)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(134, 100)
         Me.Panel4.TabIndex = 7
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(3, 31)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(29, 31)
+        Me.Label7.TabIndex = 1
+        Me.Label7.Text = "0"
         '
         'Label3
         '
@@ -289,6 +332,9 @@ Partial Class Dash
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
+        'Timer1
+        '
+        '
         'Dash
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -303,7 +349,6 @@ Partial Class Dash
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         Me.Panel6.ResumeLayout(False)
@@ -339,8 +384,12 @@ Partial Class Dash
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Timer1 As Timer
 End Class
