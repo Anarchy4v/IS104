@@ -7,6 +7,9 @@ Public Class Dash
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         'point of sales
+        Dim sales As New Sales()
+        sales.Show()
+        Me.Close()
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs)
@@ -29,10 +32,16 @@ Public Class Dash
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         'inventory
+        Dim inv As New Inventory()
+        inv.Show()
+        Me.Close()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         'sales report
+        Dim salesReport As New SalesReport()
+        salesReport.Show()
+        Me.Close()
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -53,7 +62,7 @@ Public Class Dash
         'search box???
     End Sub
 
-    Private Sub Label1_Click_1(sender As Object, e As EventArgs) Handles Label1.Click
-
+    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        'data grid view
     End Sub
 End Class

@@ -1,4 +1,4 @@
-﻿Public Class Sales
+﻿Public Class SalesReport
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'dashboard
         Dim dashForm As New Dash()
@@ -7,7 +7,10 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        'point of sale active
+        'point of sales
+        Dim sales As New Sales()
+        sales.Show()
+        Me.Close()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -18,18 +21,14 @@
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        'sales report
-        Dim salesReport As New SalesReport()
-        salesReport.Show()
-        Me.Close()
+        'sales report active
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        'setting
+        'settings
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        'log out
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to log out?", "Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If result = DialogResult.Yes Then
@@ -38,23 +37,15 @@
         End If
     End Sub
 
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-        'total label
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+        'date picker nu gagawen rito?
     End Sub
 
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
-        'total discount label
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        'data grid style
     End Sub
 
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
-        'total amount label
-    End Sub
-
-    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
-        'cash label
-    End Sub
-
-    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
-        'change label
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        'print sales report
     End Sub
 End Class
