@@ -31,8 +31,18 @@ Partial Class Sales
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -40,16 +50,6 @@ Partial Class Sales
         Me.Total = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -148,6 +148,51 @@ Partial Class Sales
         Me.Panel3.Size = New System.Drawing.Size(570, 426)
         Me.Panel3.TabIndex = 2
         '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(441, 346)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(112, 23)
+        Me.Button11.TabIndex = 18
+        Me.Button11.Text = "Print Receipt"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(372, 346)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(63, 23)
+        Me.Button10.TabIndex = 17
+        Me.Button10.Text = "Total"
+        Me.Button10.UseVisualStyleBackColor = True
+        '
+        'Button9
+        '
+        Me.Button9.Location = New System.Drawing.Point(254, 346)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(112, 23)
+        Me.Button9.TabIndex = 16
+        Me.Button9.Text = "Discount"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.Location = New System.Drawing.Point(136, 346)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(112, 23)
+        Me.Button8.TabIndex = 15
+        Me.Button8.Text = "Compute"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(18, 346)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(112, 23)
+        Me.Button7.TabIndex = 14
+        Me.Button7.Text = "Return for Refunds"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(8, 35)
@@ -172,6 +217,61 @@ Partial Class Sales
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(229, 204)
         Me.Panel4.TabIndex = 12
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(171, 159)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(40, 20)
+        Me.Label10.TabIndex = 9
+        Me.Label10.Text = "0.00"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(171, 123)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(40, 20)
+        Me.Label9.TabIndex = 8
+        Me.Label9.Text = "0.00"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(171, 84)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(40, 20)
+        Me.Label8.TabIndex = 7
+        Me.Label8.Text = "0.00"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(171, 51)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(40, 20)
+        Me.Label7.TabIndex = 6
+        Me.Label7.Text = "0.00"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(171, 17)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(40, 20)
+        Me.Label6.TabIndex = 5
+        Me.Label6.Text = "0.00"
         '
         'Label5
         '
@@ -254,106 +354,6 @@ Partial Class Sales
         Me.Label1.Size = New System.Drawing.Size(161, 29)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Point of Sales"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(171, 17)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(40, 20)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "0.00"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(171, 51)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(40, 20)
-        Me.Label7.TabIndex = 6
-        Me.Label7.Text = "0.00"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(171, 84)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(40, 20)
-        Me.Label8.TabIndex = 7
-        Me.Label8.Text = "0.00"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(171, 123)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(40, 20)
-        Me.Label9.TabIndex = 8
-        Me.Label9.Text = "0.00"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(171, 159)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(40, 20)
-        Me.Label10.TabIndex = 9
-        Me.Label10.Text = "0.00"
-        '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(18, 346)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(112, 23)
-        Me.Button7.TabIndex = 14
-        Me.Button7.Text = "Return for Refunds"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
-        'Button8
-        '
-        Me.Button8.Location = New System.Drawing.Point(136, 346)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(112, 23)
-        Me.Button8.TabIndex = 15
-        Me.Button8.Text = "Compute"
-        Me.Button8.UseVisualStyleBackColor = True
-        '
-        'Button9
-        '
-        Me.Button9.Location = New System.Drawing.Point(254, 346)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(112, 23)
-        Me.Button9.TabIndex = 16
-        Me.Button9.Text = "Discount"
-        Me.Button9.UseVisualStyleBackColor = True
-        '
-        'Button10
-        '
-        Me.Button10.Location = New System.Drawing.Point(372, 346)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(63, 23)
-        Me.Button10.TabIndex = 17
-        Me.Button10.Text = "Total"
-        Me.Button10.UseVisualStyleBackColor = True
-        '
-        'Button11
-        '
-        Me.Button11.Location = New System.Drawing.Point(441, 346)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(112, 23)
-        Me.Button11.TabIndex = 18
-        Me.Button11.Text = "Print Receipt"
-        Me.Button11.UseVisualStyleBackColor = True
         '
         'Sales
         '

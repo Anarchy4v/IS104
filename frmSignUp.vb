@@ -2,31 +2,14 @@
 
 Public Class frmSignUp
     Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=employees"
-    Private cn As MySqlConnection
-    Private cm As MySqlCommand
+
+    Private formClosingByButton As Boolean = False
+    Private formClosingBySystem As Boolean = False
+
 
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
         Try
-            If String.IsNullOrEmpty(txtEmail.Text) Then Return
-            If String.IsNullOrEmpty(txtPassword.Text) Then Return
-            If String.IsNullOrEmpty(txtConfirm.Text) Then Return
-            If txtPassword.Text <> txtConfirm.Text Then
-                MsgBox("Confirm Password did not match!", vbCritical)
-                Return
-            ElseIf MsgBox("Are you sure you want to save this account?", vbYesNo + vbQuestion) = vbYes Then
-                Using cn = New MySqlConnection(connectionString)
-                    cn.Open()
-                    Using cm = New MySqlCommand("INSERT INTO tbluser (username, password) VALUES (@username, @password)", cn)
-                        cm.Parameters.AddWithValue("@username", txtEmail.Text)
-                        cm.Parameters.AddWithValue("@password", txtPassword.Text)
-                        cm.ExecuteNonQuery()
-                    End Using
-                End Using
-
-                MsgBox("New account has been successfully created (DBCONNECTED).", vbInformation)
-                Clear()
-            End If
-
+            ' existing shit out of me.
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
@@ -48,5 +31,24 @@ Public Class frmSignUp
 
     Private Sub txtConfirm_TextChanged(sender As Object, e As EventArgs) Handles txtConfirm.TextChanged
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        formClosingByButton = True
+        Me.Close()
+    End Sub
+
+    Private Sub frmSignUp_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If formClosingByButton Then
+            Dim result As DialogResult = MessageBox.Show("Are you sure you want to cancel registration?", "Cancel Register", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+            formClosingByButton = False
+
+            e.Cancel = (result = DialogResult.No)
+        ElseIf Not formClosingBySystem Then
+            Dim result As DialogResult = MessageBox.Show("Are you sure to cancel process?", "Cancel Process", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+            e.Cancel = (result = DialogResult.No)
+        End If
     End Sub
 End Class

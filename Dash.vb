@@ -1,4 +1,6 @@
-﻿Public Class Dash
+﻿Imports MySql.Data.MySqlClient
+
+Public Class Dash
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'dashboard active
     End Sub
@@ -18,7 +20,7 @@
     'dashboard text
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-        'retrieve the username DB
+        'retrive userID guess?
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
