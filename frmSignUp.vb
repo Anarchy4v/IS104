@@ -1,6 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
+
 Public Class frmSignUp
-    Private cn As Object
+    Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=employees"
+    Private cn As MySqlConnection
     Private cm As MySqlCommand
 
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
@@ -12,18 +14,20 @@ Public Class frmSignUp
                 MsgBox("Confirm Password did not match!", vbCritical)
                 Return
             ElseIf MsgBox("Are you sure you want to save this account?", vbYesNo + vbQuestion) = vbYes Then
-                cn.Open()
-                cm = New MySqlCommand("insert into tbluser (username, password) values(@username, @password)", cn)
-                cm.Parameters.AddWithValue("@username", txtEmail.Text)
-                cm.Parameters.AddWithValue("@password", txtPassword.Text)
-                cm.ExecuteNonQuery()
-                cn.Close()
-                MsgBox("New account has been successfully created.", vbInformation)
+                Using cn = New MySqlConnection(connectionString)
+                    cn.Open()
+                    Using cm = New MySqlCommand("INSERT INTO tbluser (username, password) VALUES (@username, @password)", cn)
+                        cm.Parameters.AddWithValue("@username", txtEmail.Text)
+                        cm.Parameters.AddWithValue("@password", txtPassword.Text)
+                        cm.ExecuteNonQuery()
+                    End Using
+                End Using
+
+                MsgBox("New account has been successfully created (DBCONNECTED).", vbInformation)
                 Clear()
             End If
 
         Catch ex As Exception
-            cn.Close()
             MsgBox(ex.Message, vbCritical)
         End Try
     End Sub
@@ -32,5 +36,17 @@ Public Class frmSignUp
         txtConfirm.Clear()
         txtPassword.Clear()
         txtEmail.Clear()
+    End Sub
+
+    Private Sub txtEmail_TextChanged(sender As Object, e As EventArgs) Handles txtEmail.TextChanged
+
+    End Sub
+
+    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
+
+    End Sub
+
+    Private Sub txtConfirm_TextChanged(sender As Object, e As EventArgs) Handles txtConfirm.TextChanged
+
     End Sub
 End Class
