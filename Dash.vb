@@ -1,6 +1,14 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Dash
+    Dim random As New Random()
+    Private formClosingByButton As Boolean = False
+    Private formClosingBySystem As Boolean = False
+
+    Private Sub Dash_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Start the timer when the form loads
+        Timer1.Start()
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'dashboard active
     End Sub
@@ -62,7 +70,29 @@ Public Class Dash
         'search box???
     End Sub
 
-    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs)
         'data grid view
+    End Sub
+
+
+
+    Private Sub frmSignUp_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If Not formClosingBySystem Then
+            Dim result As DialogResult = MessageBox.Show("Exit Application?", "IS104 - TGPharmacy", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            e.Cancel = (result = DialogResult.No)
+        End If
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        ' Generate syempre live count haha
+        Dim randomNumber As Integer = random.Next(1, 301)
+        Dim randomNumber1 As Integer = random.Next(1, 401)
+        Dim randomNumber2 As Integer = random.Next(1, 501)
+        Dim randomNumber3 As Integer = random.Next(1, 201)
+
+        Label7.Text = randomNumber.ToString()
+        Label8.Text = randomNumber1.ToString()
+        Label9.Text = randomNumber2.ToString()
+        Label10.Text = randomNumber3.ToString()
     End Sub
 End Class
