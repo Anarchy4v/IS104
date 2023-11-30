@@ -117,6 +117,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="Sales.Designer.vb">
+      <DependentUpon>Sales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sales.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Dash.resx">
@@ -138,6 +144,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales.resx">
+      <DependentUpon>Sales.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
