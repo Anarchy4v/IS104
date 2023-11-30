@@ -10,7 +10,7 @@ Public Class Form1
 
     Private Sub btnAccount_Click(sender As Object, e As EventArgs) Handles btnAccount.Click
         Dim signUpForm As New frmSignUp()
-        signUpForm.ShowDialog()
+        signUpForm.Show()
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
@@ -42,7 +42,7 @@ Public Class Form1
             End Using
 
             If found Then
-                MsgBox("Access Granted!.", vbExclamation)
+                MsgBox("Access Granted!.")
                 ' access the fucking dashboard here
                 Dim dashForm As New Dash()
                 dashForm.Show()
@@ -55,7 +55,4 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' No need to call Connection() separately; the connection is now created inside the btnLogin_Click method.
-    End Sub
 End Class
