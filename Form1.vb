@@ -72,7 +72,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         ' Save credentials when the checkbox is checked
         If CheckBox1.Checked Then
             My.Settings.Username = txtUser.Text
