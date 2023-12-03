@@ -114,4 +114,8 @@ Public Class Inventory
         Dim addMed As New AddMedicine()
         addMed.Show()
     End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        'search medicine
+    End Sub
 End Class

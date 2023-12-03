@@ -31,6 +31,7 @@ Partial Class Inventory
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button10 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Button9 = New System.Windows.Forms.Button()
@@ -122,6 +123,7 @@ Partial Class Inventory
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.Button10)
         Me.Panel3.Controls.Add(Me.DataGridView1)
         Me.Panel3.Controls.Add(Me.ComboBox1)
         Me.Panel3.Controls.Add(Me.Button9)
@@ -133,6 +135,15 @@ Partial Class Inventory
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(570, 426)
         Me.Panel3.TabIndex = 3
+        '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(192, 34)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(112, 21)
+        Me.Button10.TabIndex = 19
+        Me.Button10.Text = "Search Medicine"
+        Me.Button10.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
@@ -230,4 +241,5 @@ Partial Class Inventory
     Friend WithEvents Label1 As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Button10 As Button
 End Class

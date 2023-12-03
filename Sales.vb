@@ -1,4 +1,40 @@
-﻿Public Class Sales
+﻿Imports MySql.Data.MySqlClient
+
+Public Class Sales
+    Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=employees"
+    Private medicineBindingSource As New BindingSource()
+
+    Private Sub LoadMedicines()
+        Try
+            Using connection As MySqlConnection = New MySqlConnection(connectionString)
+                connection.Open()
+                Dim query As String = "SELECT med_id, med_name, med_dosage, med_QTY, med_price, UnitName FROM medicine JOIN DosageUnits ON medicine.DosageUnitID = DosageUnits.ID;"
+
+                Using command As MySqlCommand = New MySqlCommand(query, connection)
+                    Using reader As MySqlDataReader = command.ExecuteReader()
+                        LoadDataToDataGridView(reader)
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            HandleError("Error loading medicines", ex)
+        End Try
+    End Sub
+
+    Private Sub LoadDataToDataGridView(reader As MySqlDataReader)
+        Dim dataTable As New DataTable()
+        dataTable.Load(reader)
+        medicineBindingSource.DataSource = dataTable
+        POSData1.DataSource = medicineBindingSource
+    End Sub
+
+    Private Sub HandleError(message As String, ex As Exception)
+        MessageBox.Show($"{message}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ' Log the error for future reference (optional)
+        ' Logger.Log(ex)
+    End Sub
+
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'dashboard
         Dim dashForm As New Dash()
@@ -56,5 +92,13 @@
 
     Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
         'change label
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        'search textbox
+    End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        'search medicine label
     End Sub
 End Class

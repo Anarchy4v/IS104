@@ -35,7 +35,6 @@ Public Class AddMedicine
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        ' Add operation to DB
         Try
             Using connection As MySqlConnection = New MySqlConnection(connectionString)
                 connection.Open()
@@ -70,9 +69,17 @@ Public Class AddMedicine
             If result IsNot Nothing Then
                 Return Convert.ToInt32(result)
             Else
-                ' Default to 1 if the dosage unit ID is not found (you might want to handle this differently based on your requirements)
                 Return 1
             End If
         End Using
     End Function
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        'log out
+        Dim result As DialogResult = MessageBox.Show("Cancel operation?", "Cancel Operation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If result = DialogResult.Yes Then
+            Me.Close()
+        End If
+    End Sub
 End Class

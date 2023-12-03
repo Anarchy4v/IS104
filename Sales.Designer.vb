@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Sales
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Sales
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -31,6 +31,7 @@ Partial Class Sales
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button12 = New System.Windows.Forms.Button()
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Button10 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
@@ -48,12 +49,13 @@ Partial Class Sales
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Total = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.POSData1 = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        CType(Me.POSData1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -134,6 +136,8 @@ Partial Class Sales
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.POSData1)
+        Me.Panel3.Controls.Add(Me.Button12)
         Me.Panel3.Controls.Add(Me.Button11)
         Me.Panel3.Controls.Add(Me.Button10)
         Me.Panel3.Controls.Add(Me.Button9)
@@ -141,16 +145,24 @@ Partial Class Sales
         Me.Panel3.Controls.Add(Me.Button7)
         Me.Panel3.Controls.Add(Me.TextBox1)
         Me.Panel3.Controls.Add(Me.Panel4)
-        Me.Panel3.Controls.Add(Me.TableLayoutPanel1)
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Location = New System.Drawing.Point(218, 12)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(570, 426)
         Me.Panel3.TabIndex = 2
         '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(192, 33)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(112, 23)
+        Me.Button12.TabIndex = 20
+        Me.Button12.Text = "Search Medicine"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
         'Button11
         '
-        Me.Button11.Location = New System.Drawing.Point(441, 346)
+        Me.Button11.Location = New System.Drawing.Point(431, 346)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(112, 23)
         Me.Button11.TabIndex = 18
@@ -159,7 +171,7 @@ Partial Class Sales
         '
         'Button10
         '
-        Me.Button10.Location = New System.Drawing.Point(372, 346)
+        Me.Button10.Location = New System.Drawing.Point(362, 346)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(63, 23)
         Me.Button10.TabIndex = 17
@@ -168,7 +180,7 @@ Partial Class Sales
         '
         'Button9
         '
-        Me.Button9.Location = New System.Drawing.Point(254, 346)
+        Me.Button9.Location = New System.Drawing.Point(244, 346)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(112, 23)
         Me.Button9.TabIndex = 16
@@ -177,7 +189,7 @@ Partial Class Sales
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(136, 346)
+        Me.Button8.Location = New System.Drawing.Point(126, 346)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(112, 23)
         Me.Button8.TabIndex = 15
@@ -186,7 +198,7 @@ Partial Class Sales
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(18, 346)
+        Me.Button7.Location = New System.Drawing.Point(8, 346)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(112, 23)
         Me.Button7.TabIndex = 14
@@ -213,7 +225,7 @@ Partial Class Sales
         Me.Panel4.Controls.Add(Me.Label3)
         Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Controls.Add(Me.Total)
-        Me.Panel4.Location = New System.Drawing.Point(332, 35)
+        Me.Panel4.Location = New System.Drawing.Point(332, 64)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(229, 204)
         Me.Panel4.TabIndex = 12
@@ -328,23 +340,6 @@ Partial Class Sales
         Me.Total.TabIndex = 0
         Me.Total.Text = "Total"
         '
-        'TableLayoutPanel1
-        '
-        Me.TableLayoutPanel1.ColumnCount = 1
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(8, 67)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 7
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.82759!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.17241!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(318, 233)
-        Me.TableLayoutPanel1.TabIndex = 11
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -354,6 +349,14 @@ Partial Class Sales
         Me.Label1.Size = New System.Drawing.Size(161, 29)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Point of Sales"
+        '
+        'POSData1
+        '
+        Me.POSData1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.POSData1.Location = New System.Drawing.Point(8, 64)
+        Me.POSData1.Name = "POSData1"
+        Me.POSData1.Size = New System.Drawing.Size(318, 276)
+        Me.POSData1.TabIndex = 21
         '
         'Sales
         '
@@ -371,6 +374,7 @@ Partial Class Sales
         Me.Panel3.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        CType(Me.POSData1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -385,7 +389,6 @@ Partial Class Sales
     Friend WithEvents Button1 As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label2 As Label
@@ -403,4 +406,6 @@ Partial Class Sales
     Friend WithEvents Button9 As Button
     Friend WithEvents Button8 As Button
     Friend WithEvents Button7 As Button
+    Friend WithEvents Button12 As Button
+    Friend WithEvents POSData1 As DataGridView
 End Class
