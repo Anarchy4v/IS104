@@ -30,13 +30,12 @@ Public Class frmSignUp
             Using connection As MySqlConnection = New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim query As String = "INSERT INTO tbluser (username, password, email) VALUES (@username, @password, @email);"
-                Using command As MySqlCommand = New MySqlCommand(query, connection)
-                    command.Parameters.AddWithValue("@username", "your_username") ' Replace with the actual username
-                    command.Parameters.AddWithValue("@password", txtPassword.Text)
-                    command.Parameters.AddWithValue("@email", txtEmail.Text)
+                Dim insertQuery As String = "INSERT INTO tbluser (password, email) VALUES (@password, @email);"
+                Using insertCommand As MySqlCommand = New MySqlCommand(insertQuery, connection)
+                    insertCommand.Parameters.AddWithValue("@password", txtPassword.Text)
+                    insertCommand.Parameters.AddWithValue("@email", txtEmail.Text)
 
-                    command.ExecuteNonQuery()
+                    insertCommand.ExecuteNonQuery()
 
                     MsgBox("Registration successful!", vbInformation)
 
