@@ -1,11 +1,9 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class AddMedicine
-    ' Connection string for MySQL
     Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=employees"
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Initialize the ComboBox with dosage units
         PopulateDosageUnitsComboBox()
         ComboBox1.SelectedIndex = 0
     End Sub
@@ -42,10 +40,7 @@ Public Class AddMedicine
             Using connection As MySqlConnection = New MySqlConnection(connectionString)
                 connection.Open()
 
-                ' Get the selected dosage unit ID from the DosageUnits table
                 Dim dosageUnitID As Integer = GetDosageUnitID(ComboBox1.SelectedItem.ToString(), connection)
-
-                ' Insert medicine into the medicine table
                 Dim query As String = "INSERT INTO medicine (med_name, med_dosage, med_QTY, med_price, DosageUnitID) VALUES (@med_name, @med_dosage, @med_QTY, @med_price, @DosageUnitID);"
                 Using command As MySqlCommand = New MySqlCommand(query, connection)
                     command.Parameters.AddWithValue("@med_name", TextBox1.Text)
@@ -56,10 +51,7 @@ Public Class AddMedicine
 
                     command.ExecuteNonQuery()
 
-                    ' Optional: Display a success message
                     MessageBox.Show("Medicine added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-                    ' Close the form
                     Me.Close()
                 End Using
             End Using
@@ -69,7 +61,6 @@ Public Class AddMedicine
         End Try
     End Sub
 
-    ' Helper function to get the dosage unit ID
     Private Function GetDosageUnitID(dosageUnitName As String, connection As MySqlConnection) As Integer
         Dim query As String = "SELECT ID FROM DosageUnits WHERE UnitName = @UnitName;"
         Using command As MySqlCommand = New MySqlCommand(query, connection)

@@ -22,9 +22,10 @@ Public Class Form1
             Using connection = New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim query As String = "SELECT * FROM tbluser WHERE username = @username AND password = @password"
+                Dim query As String = "SELECT * FROM tbluser WHERE (username = @username AND password = @password) OR (email = @email AND password = @password);"
                 Using command = New MySqlCommand(query, connection)
                     command.Parameters.AddWithValue("@username", txtUser.Text)
+                    command.Parameters.AddWithValue("@email", txtUser.Text)
                     command.Parameters.AddWithValue("@password", txtPass.Text)
 
                     Using reader = command.ExecuteReader()
@@ -43,7 +44,14 @@ Public Class Form1
 
             If found Then
                 MsgBox("Access Granted!.")
-                ' access the fucking dashboard here
+                ' Save credentials if the checkbox is checked
+                If CheckBox1.Checked Then
+                    My.Settings.Username = strUser
+                    My.Settings.Password = strPass
+                    My.Settings.Save()
+                End If
+
+                ' Access the dashboard here
                 Dim dashForm As New Dash()
                 dashForm.Show()
                 Me.Hide()
@@ -56,10 +64,26 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'save credentials
+        ' Load saved credentials
+        If Not String.IsNullOrEmpty(My.Settings.Username) Then
+            txtUser.Text = My.Settings.Username
+            txtPass.Text = My.Settings.Password
+            CheckBox1.Checked = True
+        End If
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        'save credentials
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs)
+        ' Save credentials when the checkbox is checked
+        If CheckBox1.Checked Then
+            My.Settings.Username = txtUser.Text
+            My.Settings.Password = txtPass.Text
+        Else
+            ' Clear saved credentials when the checkbox is unchecked
+            My.Settings.Username = ""
+            My.Settings.Password = ""
+        End If
+
+        ' Save changes to My.Settings
+        My.Settings.Save()
     End Sub
 End Class

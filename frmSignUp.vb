@@ -6,10 +6,44 @@ Public Class frmSignUp
     Private formClosingByButton As Boolean = False
     Private formClosingBySystem As Boolean = False
 
+    Private Function IsValidEmail(email As String) As Boolean
+        Try
+            Dim addr As New System.Net.Mail.MailAddress(email)
+            Return addr.Address = email
+        Catch
+            Return False
+        End Try
+    End Function
 
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
         Try
-            ' existing shit out of me.
+            If Not IsValidEmail(txtEmail.Text) Then
+                MsgBox("Please enter a valid email address.", vbExclamation)
+                Return
+            End If
+
+            If txtPassword.Text <> txtConfirm.Text Then
+                MsgBox("Passwords do not match. Please re-enter.", vbExclamation)
+                Return
+            End If
+
+            Using connection As MySqlConnection = New MySqlConnection(connectionString)
+                connection.Open()
+
+                Dim query As String = "INSERT INTO tbluser (username, password, email) VALUES (@username, @password, @email);"
+                Using command As MySqlCommand = New MySqlCommand(query, connection)
+                    command.Parameters.AddWithValue("@username", "your_username") ' Replace with the actual username
+                    command.Parameters.AddWithValue("@password", txtPassword.Text)
+                    command.Parameters.AddWithValue("@email", txtEmail.Text)
+
+                    command.ExecuteNonQuery()
+
+                    MsgBox("Registration successful!", vbInformation)
+
+                    ' Clear the form
+                    Clear()
+                End Using
+            End Using
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
@@ -19,18 +53,6 @@ Public Class frmSignUp
         txtConfirm.Clear()
         txtPassword.Clear()
         txtEmail.Clear()
-    End Sub
-
-    Private Sub txtEmail_TextChanged(sender As Object, e As EventArgs) Handles txtEmail.TextChanged
-
-    End Sub
-
-    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
-
-    End Sub
-
-    Private Sub txtConfirm_TextChanged(sender As Object, e As EventArgs) Handles txtConfirm.TextChanged
-
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

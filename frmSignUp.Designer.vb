@@ -63,6 +63,7 @@ Partial Class frmSignUp
         '
         Me.txtPassword.Location = New System.Drawing.Point(422, 204)
         Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(183, 20)
         Me.txtPassword.TabIndex = 3
         '
@@ -70,6 +71,7 @@ Partial Class frmSignUp
         '
         Me.txtConfirm.Location = New System.Drawing.Point(422, 266)
         Me.txtConfirm.Name = "txtConfirm"
+        Me.txtConfirm.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtConfirm.Size = New System.Drawing.Size(183, 20)
         Me.txtConfirm.TabIndex = 4
         '

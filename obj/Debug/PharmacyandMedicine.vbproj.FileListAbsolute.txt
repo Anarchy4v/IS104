@@ -74,7 +74,6 @@ C:\Users\rogu\Desktop\IS104\bin\Debug\System.Memory.dll
 C:\Users\rogu\Desktop\IS104\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\rogu\Desktop\IS104\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\rogu\Desktop\IS104\bin\Debug\System.Buffers.dll
-C:\Users\rogu\Desktop\IS104\bin\Debug\MySql.Data.xml
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.vbproj.AssemblyReference.cache
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.Dash.resources
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.Form1.resources
