@@ -55,4 +55,11 @@ Public Class Form1
         End Try
     End Sub
 
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'save credentials
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        'save credentials
+    End Sub
 End Class

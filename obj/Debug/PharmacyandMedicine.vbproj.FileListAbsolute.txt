@@ -90,3 +90,4 @@ C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.exe
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.xml
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.pdb
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.SalesReport.resources
+C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.AddMedicine.resources
