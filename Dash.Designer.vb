@@ -47,7 +47,6 @@ Partial Class Dash
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
@@ -153,12 +152,11 @@ Partial Class Dash
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Controls.Add(Me.PictureBox2)
-        Me.Panel3.Controls.Add(Me.TextBox1)
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Controls.Add(Me.PictureBox1)
         Me.Panel3.Location = New System.Drawing.Point(218, 12)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(570, 426)
+        Me.Panel3.Size = New System.Drawing.Size(655, 426)
         Me.Panel3.TabIndex = 1
         '
         'Panel7
@@ -166,9 +164,9 @@ Partial Class Dash
         Me.Panel7.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel7.Controls.Add(Me.Label10)
         Me.Panel7.Controls.Add(Me.Label6)
-        Me.Panel7.Location = New System.Drawing.Point(428, 52)
+        Me.Panel7.Location = New System.Drawing.Point(493, 52)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(134, 100)
+        Me.Panel7.Size = New System.Drawing.Size(152, 115)
         Me.Panel7.TabIndex = 9
         '
         'Label10
@@ -176,7 +174,7 @@ Partial Class Dash
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(3, 31)
+        Me.Label10.Location = New System.Drawing.Point(6, 31)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(29, 31)
         Me.Label10.TabIndex = 3
@@ -186,7 +184,7 @@ Partial Class Dash
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(7, 8)
+        Me.Label6.Location = New System.Drawing.Point(10, 8)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(87, 13)
         Me.Label6.TabIndex = 2
@@ -197,9 +195,9 @@ Partial Class Dash
         Me.Panel6.BackColor = System.Drawing.Color.DarkRed
         Me.Panel6.Controls.Add(Me.Label9)
         Me.Panel6.Controls.Add(Me.Label5)
-        Me.Panel6.Location = New System.Drawing.Point(288, 52)
+        Me.Panel6.Location = New System.Drawing.Point(336, 52)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(134, 100)
+        Me.Panel6.Size = New System.Drawing.Size(150, 115)
         Me.Panel6.TabIndex = 9
         '
         'Label9
@@ -228,9 +226,9 @@ Partial Class Dash
         Me.Panel5.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel5.Controls.Add(Me.Label8)
         Me.Panel5.Controls.Add(Me.Label4)
-        Me.Panel5.Location = New System.Drawing.Point(148, 52)
+        Me.Panel5.Location = New System.Drawing.Point(183, 52)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(134, 100)
+        Me.Panel5.Size = New System.Drawing.Size(147, 115)
         Me.Panel5.TabIndex = 8
         '
         'Label8
@@ -261,7 +259,7 @@ Partial Class Dash
         Me.Panel4.Controls.Add(Me.Label3)
         Me.Panel4.Location = New System.Drawing.Point(8, 52)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(134, 100)
+        Me.Panel4.Size = New System.Drawing.Size(169, 115)
         Me.Panel4.TabIndex = 7
         '
         'Label7
@@ -305,13 +303,6 @@ Partial Class Dash
         Me.PictureBox2.TabIndex = 5
         Me.PictureBox2.TabStop = False
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(139, 9)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(150, 20)
-        Me.TextBox1.TabIndex = 4
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -340,7 +331,7 @@ Partial Class Dash
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkRed
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(885, 450)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Dash"
@@ -375,7 +366,6 @@ Partial Class Dash
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel7 As Panel

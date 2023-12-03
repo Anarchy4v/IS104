@@ -4,6 +4,18 @@ Public Class Dash
     Dim random As New Random()
     Private formClosingByButton As Boolean = False
     Private formClosingBySystem As Boolean = False
+    Private userEmail As String
+
+    Public Property UserEmailProperty As String
+        Get
+            Return userEmail
+        End Get
+        Set(value As String)
+            userEmail = value
+            ' Update Label2 when the email is set
+            Label2.Text = userEmail
+        End Set
+    End Property
 
     Private Sub Dash_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Start the timer when the form loads
@@ -66,7 +78,7 @@ Public Class Dash
     End Sub
 
 
-    Private Sub TextBox1_TextChanged_1(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+    Private Sub TextBox1_TextChanged_1(sender As Object, e As EventArgs)
         'search box???
     End Sub
 

@@ -5,7 +5,7 @@ Public Class Form1
     Private connection As MySqlConnection
     Private command As MySqlCommand
     Private reader As MySqlDataReader
-    Private strUser As String
+    Private strEmail As String
     Private strPass As String
 
     Private Sub btnAccount_Click(sender As Object, e As EventArgs) Handles btnAccount.Click
@@ -22,20 +22,19 @@ Public Class Form1
             Using connection = New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim query As String = "SELECT * FROM tbluser WHERE (username = @username AND password = @password) OR (email = @email AND password = @password);"
+                Dim query As String = "SELECT * FROM tbluser WHERE email = @email AND password = @password;"
                 Using command = New MySqlCommand(query, connection)
-                    command.Parameters.AddWithValue("@username", txtUser.Text)
                     command.Parameters.AddWithValue("@email", txtUser.Text)
                     command.Parameters.AddWithValue("@password", txtPass.Text)
 
                     Using reader = command.ExecuteReader()
                         If reader.Read() Then
-                            strUser = reader("username").ToString()
+                            strEmail = reader("email").ToString()
                             strPass = reader("password").ToString()
                             found = True
                         Else
                             strPass = ""
-                            strUser = ""
+                            strEmail = ""
                             found = False
                         End If
                     End Using
@@ -44,19 +43,17 @@ Public Class Form1
 
             If found Then
                 MsgBox("Access Granted!.")
-                ' Save credentials if the checkbox is checked
-                If CheckBox1.Checked Then
-                    My.Settings.Username = strUser
-                    My.Settings.Password = strPass
-                    My.Settings.Save()
-                End If
+                My.Settings.Email = strEmail
+                My.Settings.Password = strPass
+                My.Settings.Save()
 
-                ' Access the dashboard here
                 Dim dashForm As New Dash()
+                dashForm.UserEmailProperty = strEmail
+
                 dashForm.Show()
                 Me.Hide()
             Else
-                MsgBox("Access Denied! Invalid username or password.", vbExclamation)
+                MsgBox("Access Denied! Invalid email or password.", vbExclamation)
             End If
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
@@ -64,26 +61,9 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Load saved credentials
-        If Not String.IsNullOrEmpty(My.Settings.Username) Then
-            txtUser.Text = My.Settings.Username
+        If Not String.IsNullOrEmpty(My.Settings.Email) Then
+            txtUser.Text = My.Settings.Email
             txtPass.Text = My.Settings.Password
-            CheckBox1.Checked = True
         End If
-    End Sub
-
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        ' Save credentials when the checkbox is checked
-        If CheckBox1.Checked Then
-            My.Settings.Username = txtUser.Text
-            My.Settings.Password = txtPass.Text
-        Else
-            ' Clear saved credentials when the checkbox is unchecked
-            My.Settings.Username = ""
-            My.Settings.Password = ""
-        End If
-
-        ' Save changes to My.Settings
-        My.Settings.Save()
     End Sub
 End Class
