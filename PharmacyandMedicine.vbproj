@@ -79,6 +79,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddMedicine.Designer.vb">
+      <DependentUpon>AddMedicine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddMedicine.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddMedicine.resx">
+      <DependentUpon>AddMedicine.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dash.resx">
       <DependentUpon>Dash.vb</DependentUpon>
     </EmbeddedResource>

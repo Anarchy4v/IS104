@@ -30,6 +30,7 @@ Partial Class Form1
         Me.btnAccount = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'Panel1
@@ -44,7 +45,7 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(478, 95)
+        Me.Label1.Location = New System.Drawing.Point(478, 87)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(57, 24)
         Me.Label1.TabIndex = 1
@@ -53,7 +54,7 @@ Partial Class Form1
         'txtUser
         '
         Me.txtUser.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.txtUser.Location = New System.Drawing.Point(417, 154)
+        Me.txtUser.Location = New System.Drawing.Point(417, 146)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(183, 20)
         Me.txtUser.TabIndex = 2
@@ -61,7 +62,7 @@ Partial Class Form1
         'txtPass
         '
         Me.txtPass.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.txtPass.Location = New System.Drawing.Point(417, 217)
+        Me.txtPass.Location = New System.Drawing.Point(417, 209)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPass.Size = New System.Drawing.Size(183, 20)
@@ -69,7 +70,7 @@ Partial Class Form1
         '
         'btnLogin
         '
-        Me.btnLogin.Location = New System.Drawing.Point(417, 256)
+        Me.btnLogin.Location = New System.Drawing.Point(417, 272)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(183, 23)
         Me.btnLogin.TabIndex = 4
@@ -78,7 +79,7 @@ Partial Class Form1
         '
         'btnAccount
         '
-        Me.btnAccount.Location = New System.Drawing.Point(417, 288)
+        Me.btnAccount.Location = New System.Drawing.Point(417, 304)
         Me.btnAccount.Name = "btnAccount"
         Me.btnAccount.Size = New System.Drawing.Size(183, 23)
         Me.btnAccount.TabIndex = 5
@@ -88,7 +89,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(414, 132)
+        Me.Label2.Location = New System.Drawing.Point(414, 124)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(32, 13)
         Me.Label2.TabIndex = 7
@@ -97,17 +98,28 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(414, 195)
+        Me.Label3.Location = New System.Drawing.Point(414, 187)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(53, 13)
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Password"
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(417, 242)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(81, 17)
+        Me.CheckBox1.TabIndex = 9
+        Me.CheckBox1.Text = "CheckBox1"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(674, 450)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnAccount)
@@ -131,4 +143,5 @@ Partial Class Form1
     Friend WithEvents btnAccount As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents CheckBox1 As CheckBox
 End Class

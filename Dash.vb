@@ -74,15 +74,6 @@ Public Class Dash
         'data grid view
     End Sub
 
-
-
-    Private Sub frmSignUp_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If Not formClosingBySystem Then
-            Dim result As DialogResult = MessageBox.Show("Exit Application?", "IS104 - TGPharmacy", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-            e.Cancel = (result = DialogResult.No)
-        End If
-    End Sub
-
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         ' Generate syempre live count haha
         Dim randomNumber As Integer = random.Next(1, 301)
