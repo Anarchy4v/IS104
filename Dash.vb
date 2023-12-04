@@ -31,10 +31,8 @@ Public Class Dash
                         Dim dataTable As New DataTable()
                         dataTable.Load(reader)
 
-                        ' Clear existing data in DataGridView1
                         DataGridView1.Rows.Clear()
 
-                        ' Display sorted medicines in DataGridView1
                         For Each row As DataRow In dataTable.Rows()
                             Dim rowIndex As Integer = DataGridView1.Rows.Add()
                             DataGridView1.Rows(rowIndex).Cells("ID").Value = row("med_id").ToString()
@@ -53,7 +51,6 @@ Public Class Dash
     End Sub
 
     Private Sub Dash_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Start the timer when the form loads
         Timer1.Start()
         ' tarantadong error di pa rin ako pinili T_T
         DataGridView1.Columns.Add("ID", "ID")

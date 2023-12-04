@@ -143,12 +143,12 @@ Partial Class SalesReport
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Location = New System.Drawing.Point(218, 12)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(570, 426)
+        Me.Panel3.Size = New System.Drawing.Size(677, 426)
         Me.Panel3.TabIndex = 3
         '
         'Button12
         '
-        Me.Button12.Location = New System.Drawing.Point(334, 223)
+        Me.Button12.Location = New System.Drawing.Point(436, 226)
         Me.Button12.Name = "Button12"
         Me.Button12.Size = New System.Drawing.Size(229, 23)
         Me.Button12.TabIndex = 24
@@ -161,7 +161,7 @@ Partial Class SalesReport
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8})
         Me.DataGridView1.Location = New System.Drawing.Point(8, 70)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(320, 310)
+        Me.DataGridView1.Size = New System.Drawing.Size(422, 310)
         Me.DataGridView1.TabIndex = 23
         '
         'Column1
@@ -268,7 +268,7 @@ Partial Class SalesReport
         Me.Panel4.Controls.Add(Me.Label3)
         Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Controls.Add(Me.Total)
-        Me.Panel4.Location = New System.Drawing.Point(334, 67)
+        Me.Panel4.Location = New System.Drawing.Point(436, 70)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(229, 146)
         Me.Panel4.TabIndex = 12
@@ -354,7 +354,7 @@ Partial Class SalesReport
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkRed
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(907, 450)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "SalesReport"
