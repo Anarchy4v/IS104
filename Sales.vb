@@ -21,6 +21,51 @@ Public Class Sales
         End Try
     End Sub
 
+    Private Sub ComputeTotalMedPrice()
+        Try
+            Using connection As MySqlConnection = New MySqlConnection(connectionString)
+                connection.Open()
+
+                Dim query As String = "SELECT SUM(med_price) AS TotalMedPrice FROM medicine;"
+
+                Using command As MySqlCommand = New MySqlCommand(query, connection)
+                    Dim totalMedPrice As Object = command.ExecuteScalar()
+
+                    If totalMedPrice IsNot Nothing AndAlso Not IsDBNull(totalMedPrice) Then
+                        Label6.Text = $"{Convert.ToDecimal(totalMedPrice):N2}"
+                    Else
+                        Label6.Text = "0.00"
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            HandleError("Error computing total med price", ex)
+        End Try
+    End Sub
+
+    Private Sub ComputeTotalDiscount()
+        Try
+            Using connection As MySqlConnection = New MySqlConnection(connectionString)
+                connection.Open()
+
+                Dim query As String = "SELECT SUM(med_price) AS TotalMedPrice FROM medicine;"
+
+                Using command As MySqlCommand = New MySqlCommand(query, connection)
+                    Dim totalMedPrice As Object = command.ExecuteScalar()
+
+                    If totalMedPrice IsNot Nothing AndAlso Not IsDBNull(totalMedPrice) Then
+                        Dim totalDiscount As Decimal = Convert.ToDecimal(totalMedPrice) / 2
+                        Label7.Text = $"{totalDiscount:N2}"
+                    Else
+                        Label7.Text = "0.00"
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            HandleError("Error computing total discount", ex)
+        End Try
+    End Sub
+
     Private Sub LoadDataToDataGridView(reader As MySqlDataReader)
         Dim dataTable As New DataTable()
         dataTable.Load(reader)
@@ -34,6 +79,8 @@ Public Class Sales
 
     Private Sub Sales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadMedicines()
+        ComputeTotalMedPrice()
+        ComputeTotalDiscount()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -101,5 +148,9 @@ Public Class Sales
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
         'search medicine label
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        'return for refunds
     End Sub
 End Class
