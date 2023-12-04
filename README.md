@@ -11,6 +11,6 @@ This system it dedicates to The Generics Pharmacy (Ang TGPagpagaling ng Pilipina
 
 ## Requirements to run
 
-1. Make sure you already have the MySQL connector with NuGet Package much better because you may only need to execute the updated version thru NuGet Website.
+1. Make sure you already have the MySQL connector with NuGet Package much better because you may only need to execute in your command line the updated version you may get thru NuGet Website.
 2. Transparentcy
 3. Peace of Mind (don't just ask to ask)
