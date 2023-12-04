@@ -53,5 +53,10 @@ PharmacyandMedicine
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:PharmacyandMedicine.My.Resources.Resource1.The_Generics_Pharmacy_removebg_preview_1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>

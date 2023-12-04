@@ -12,14 +12,57 @@ Public Class Dash
         End Get
         Set(value As String)
             userEmail = value
-            ' Update Label2 when the email is set
             Label2.Text = userEmail
         End Set
     End Property
 
+    Private Sub LoadMedicines()
+        Try
+            Dim connectionString As String = "server=127.0.0.1;userid=root;password='';database=employees"
+
+            Using connection As MySqlConnection = New MySqlConnection(connectionString)
+                connection.Open()
+
+                Dim query As String = "SELECT med_id, med_name, med_dosage, med_QTY, med_price, UnitName FROM medicine JOIN DosageUnits ON medicine.DosageUnitID = DosageUnits.ID;"
+
+                Using command As MySqlCommand = New MySqlCommand(query, connection)
+                    Using reader As MySqlDataReader = command.ExecuteReader()
+                        ' Create a DataTable to store the data
+                        Dim dataTable As New DataTable()
+                        dataTable.Load(reader)
+
+                        ' Clear existing data in DataGridView1
+                        DataGridView1.Rows.Clear()
+
+                        ' Display sorted medicines in DataGridView1
+                        For Each row As DataRow In dataTable.Rows()
+                            Dim rowIndex As Integer = DataGridView1.Rows.Add()
+                            DataGridView1.Rows(rowIndex).Cells("ID").Value = row("med_id").ToString()
+                            DataGridView1.Rows(rowIndex).Cells("Name").Value = row("med_name").ToString()
+                            DataGridView1.Rows(rowIndex).Cells("Dosage").Value = row("med_dosage").ToString()
+                            DataGridView1.Rows(rowIndex).Cells("Quantity").Value = row("med_QTY").ToString()
+                            DataGridView1.Rows(rowIndex).Cells("Price").Value = row("med_price").ToString()
+                            DataGridView1.Rows(rowIndex).Cells("Unit").Value = row("UnitName").ToString()
+                        Next
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error loading medicines: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
     Private Sub Dash_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Start the timer when the form loads
         Timer1.Start()
+        ' tarantadong error di pa rin ako pinili T_T
+        DataGridView1.Columns.Add("ID", "ID")
+        DataGridView1.Columns.Add("Name", "Name")
+        DataGridView1.Columns.Add("Dosage", "Dosage")
+        DataGridView1.Columns.Add("Quantity", "Quantity")
+        DataGridView1.Columns.Add("Price", "Price")
+        DataGridView1.Columns.Add("Unit", "Unit")
+        LoadMedicines()
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'dashboard active
@@ -42,10 +85,6 @@ Public Class Dash
 
     'dashboard text
 
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-        'retrive userID guess?
-    End Sub
-
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
         'idk who's the data source?
     End Sub
@@ -64,7 +103,7 @@ Public Class Dash
         Me.Close()
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs)
         'settings
     End Sub
 
