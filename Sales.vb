@@ -30,10 +30,11 @@ Public Class Sales
 
     Private Sub HandleError(message As String, ex As Exception)
         MessageBox.Show($"{message}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        ' Log the error for future reference (optional)
-        ' Logger.Log(ex)
     End Sub
 
+    Private Sub Sales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadMedicines()
+    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'dashboard
@@ -60,7 +61,7 @@ Public Class Sales
         Me.Close()
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs) 
         'setting
     End Sub
 

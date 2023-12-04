@@ -26,13 +26,18 @@ Partial Class Dash
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DirectorySearcher1 = New System.DirectoryServices.DirectorySearcher()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -46,14 +51,16 @@ Partial Class Dash
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -73,7 +80,6 @@ Partial Class Dash
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.Button6)
-        Me.Panel2.Controls.Add(Me.Button5)
         Me.Panel2.Controls.Add(Me.Button4)
         Me.Panel2.Controls.Add(Me.Button3)
         Me.Panel2.Controls.Add(Me.Button2)
@@ -85,25 +91,16 @@ Partial Class Dash
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(0, 178)
+        Me.Button6.Location = New System.Drawing.Point(0, 164)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(200, 23)
         Me.Button6.TabIndex = 5
         Me.Button6.Text = "Log Out"
         Me.Button6.UseVisualStyleBackColor = True
         '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(0, 149)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(200, 23)
-        Me.Button5.TabIndex = 4
-        Me.Button5.Text = "Settings"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(0, 120)
+        Me.Button4.Location = New System.Drawing.Point(0, 135)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(200, 23)
         Me.Button4.TabIndex = 3
@@ -112,7 +109,7 @@ Partial Class Dash
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(0, 91)
+        Me.Button3.Location = New System.Drawing.Point(0, 106)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(200, 23)
         Me.Button3.TabIndex = 2
@@ -121,7 +118,7 @@ Partial Class Dash
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(0, 62)
+        Me.Button2.Location = New System.Drawing.Point(0, 77)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(200, 23)
         Me.Button2.TabIndex = 1
@@ -130,7 +127,7 @@ Partial Class Dash
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(0, 33)
+        Me.Button1.Location = New System.Drawing.Point(0, 48)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(200, 23)
         Me.Button1.TabIndex = 0
@@ -146,6 +143,12 @@ Partial Class Dash
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.DataGridView2)
+        Me.Panel3.Controls.Add(Me.DataGridView1)
+        Me.Panel3.Controls.Add(Me.Label13)
+        Me.Panel3.Controls.Add(Me.Label14)
+        Me.Panel3.Controls.Add(Me.Label12)
+        Me.Panel3.Controls.Add(Me.Label11)
         Me.Panel3.Controls.Add(Me.Panel7)
         Me.Panel3.Controls.Add(Me.Panel6)
         Me.Panel3.Controls.Add(Me.Panel5)
@@ -158,6 +161,64 @@ Partial Class Dash
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(655, 426)
         Me.Panel3.TabIndex = 1
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(338, 233)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.Size = New System.Drawing.Size(307, 180)
+        Me.DataGridView2.TabIndex = 15
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(10, 233)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(320, 180)
+        Me.DataGridView1.TabIndex = 14
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label13.Location = New System.Drawing.Point(335, 213)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(189, 13)
+        Me.Label13.TabIndex = 13
+        Me.Label13.Text = "This tab is sorted by medicine quantity."
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(331, 177)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(138, 29)
+        Me.Label14.TabIndex = 12
+        Me.Label14.Text = "Top Selling"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label12.Location = New System.Drawing.Point(7, 213)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(178, 13)
+        Me.Label12.TabIndex = 11
+        Me.Label12.Text = "This tab is sorted by medicine name."
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(3, 177)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(128, 29)
+        Me.Label11.TabIndex = 10
+        Me.Label11.Text = "Stock Alert"
         '
         'Panel7
         '
@@ -293,6 +354,20 @@ Partial Class Dash
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "user"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(3, 10)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(131, 29)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Dashboard"
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 2000
+        '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.PharmacyandMedicine.My.Resources.Resources.notification
@@ -303,16 +378,6 @@ Partial Class Dash
         Me.PictureBox2.TabIndex = 5
         Me.PictureBox2.TabStop = False
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(3, 3)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(131, 29)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Dashboard"
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.PharmacyandMedicine.My.Resources.Resources.profile
@@ -322,9 +387,6 @@ Partial Class Dash
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
-        '
-        'Timer1
-        '
         '
         'Dash
         '
@@ -340,6 +402,8 @@ Partial Class Dash
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         Me.Panel6.ResumeLayout(False)
@@ -357,7 +421,6 @@ Partial Class Dash
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Button6 As Button
-    Friend WithEvents Button5 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
@@ -382,4 +445,10 @@ Partial Class Dash
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridView2 As DataGridView
 End Class
