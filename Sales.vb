@@ -8,7 +8,7 @@ Public Class Sales
         Try
             Using connection As MySqlConnection = New MySqlConnection(connectionString)
                 connection.Open()
-                Dim query As String = "SELECT med_id, med_name, med_dosage, med_QTY, med_price, UnitName FROM medicine JOIN DosageUnits ON medicine.DosageUnitID = DosageUnits.ID WHERE LOWER(med_name) LIKE LOWER(@Keyword);"
+                Dim query As String = "SELECT med_name, med_dosage, UnitName, med_QTY, med_price FROM medicine JOIN DosageUnits ON medicine.DosageUnitID = DosageUnits.ID WHERE LOWER(med_name) LIKE LOWER(@Keyword);"
 
                 Using command As MySqlCommand = New MySqlCommand(query, connection)
                     command.Parameters.AddWithValue("@Keyword", "%" & keyword & "%")
