@@ -126,12 +126,6 @@ Public Class Sales
         LoadMedicines(keyword)
     End Sub
 
-    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
-        ' Trigger the search when Button12 is clicked
-        Dim keyword As String = TextBox1.Text.Trim()
-        LoadMedicines(keyword)
-    End Sub
-
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         'return for refunds
         Dim returnRefunds As New ReturnRefunds()
