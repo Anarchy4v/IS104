@@ -114,3 +114,7 @@ E:\Users\rogu\Desktop\SAD_IS\obj\Debug\PharmacyandMedicine.vbproj.CopyComplete
 E:\Users\rogu\Desktop\SAD_IS\obj\Debug\PharmacyandMedicine.exe
 E:\Users\rogu\Desktop\SAD_IS\obj\Debug\PharmacyandMedicine.xml
 E:\Users\rogu\Desktop\SAD_IS\obj\Debug\PharmacyandMedicine.pdb
+E:\Users\rogu\Desktop\SAD_IS\obj\Debug\PharmacyandMedicine.Compute.resources
+E:\Users\rogu\Desktop\SAD_IS\obj\Debug\PharmacyandMedicine.DiscountWindow.resources
+E:\Users\rogu\Desktop\SAD_IS\obj\Debug\PharmacyandMedicine.ReturnRefunds.resources
+E:\Users\rogu\Desktop\SAD_IS\obj\Debug\PharmacyandMedicine.TotalWindow.resources

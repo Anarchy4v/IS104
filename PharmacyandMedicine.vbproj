@@ -88,6 +88,18 @@
     <Compile Include="AddMedicine.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Compute.Designer.vb">
+      <DependentUpon>Compute.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Compute.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiscountWindow.Designer.vb">
+      <DependentUpon>DiscountWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DiscountWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +145,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="ReturnRefunds.Designer.vb">
+      <DependentUpon>ReturnRefunds.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnRefunds.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Sales.Designer.vb">
       <DependentUpon>Sales.vb</DependentUpon>
     </Compile>
@@ -145,13 +163,25 @@
     <Compile Include="SalesReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TotalWindow.Designer.vb">
+      <DependentUpon>TotalWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TotalWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddMedicine.resx">
       <DependentUpon>AddMedicine.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Compute.resx">
+      <DependentUpon>Compute.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dash.resx">
       <DependentUpon>Dash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiscountWindow.resx">
+      <DependentUpon>DiscountWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -174,11 +204,17 @@
       <LastGenOutput>Resource1.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReturnRefunds.resx">
+      <DependentUpon>ReturnRefunds.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sales.resx">
       <DependentUpon>Sales.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesReport.resx">
       <DependentUpon>SalesReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TotalWindow.resx">
+      <DependentUpon>TotalWindow.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

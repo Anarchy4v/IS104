@@ -4,13 +4,15 @@ Public Class Sales
     Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=employees"
     Private medicineBindingSource As New BindingSource()
 
-    Private Sub LoadMedicines()
+    Private Sub LoadMedicines(Optional keyword As String = "")
         Try
             Using connection As MySqlConnection = New MySqlConnection(connectionString)
                 connection.Open()
-                Dim query As String = "SELECT med_id, med_name, med_dosage, med_QTY, med_price, UnitName FROM medicine JOIN DosageUnits ON medicine.DosageUnitID = DosageUnits.ID;"
+                Dim query As String = "SELECT med_id, med_name, med_dosage, med_QTY, med_price, UnitName FROM medicine JOIN DosageUnits ON medicine.DosageUnitID = DosageUnits.ID WHERE LOWER(med_name) LIKE LOWER(@Keyword);"
 
                 Using command As MySqlCommand = New MySqlCommand(query, connection)
+                    command.Parameters.AddWithValue("@Keyword", "%" & keyword & "%")
+
                     Using reader As MySqlDataReader = command.ExecuteReader()
                         LoadDataToDataGridView(reader)
                     End Using
@@ -108,10 +110,6 @@ Public Class Sales
         Me.Close()
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) 
-        'setting
-    End Sub
-
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         'log out
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to log out?", "Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -122,35 +120,50 @@ Public Class Sales
         End If
     End Sub
 
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-        'total label
-    End Sub
-
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
-        'total discount label
-    End Sub
-
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
-        'total amount label
-    End Sub
-
-    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
-        'cash label
-    End Sub
-
-    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
-        'change label
-    End Sub
-
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
         'search textbox
+        Dim keyword As String = TextBox1.Text.Trim()
+        LoadMedicines(keyword)
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
-        'search medicine label
+        ' Trigger the search when Button12 is clicked
+        Dim keyword As String = TextBox1.Text.Trim()
+        LoadMedicines(keyword)
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         'return for refunds
+        Dim returnRefunds As New ReturnRefunds()
+        returnRefunds.Show()
+    End Sub
+
+    Private Sub MainForm_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        ' keystroke open different shit (need test 4 laptop)
+        If e.KeyCode = Keys.F1 Then
+            Call Button8_Click(sender, e)
+        ElseIf e.KeyCode = Keys.F2 Then
+            Call Button9_Click(sender, e)
+        ElseIf e.KeyCode = Keys.F3 Then
+            Call Button10_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        'compute
+        Dim computeTab As New Compute()
+        computeTab.Show()
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        'discount
+        Dim discount As New DiscountWindow()
+        discount.Show()
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        'total
+        Dim totalWindow As New TotalWindow()
+        totalWindow.Show()
     End Sub
 End Class
