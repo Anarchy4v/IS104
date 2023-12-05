@@ -59,7 +59,10 @@ Public Class Dash
         DataGridView1.Columns.Add("Quantity", "Quantity")
         DataGridView1.Columns.Add("Price", "Price")
         DataGridView1.Columns.Add("Unit", "Unit")
+        'load them in shit
         LoadMedicines()
+        'I add this because of fatigue for nothing.
+        Me.AcceptButton = Nothing
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'dashboard active

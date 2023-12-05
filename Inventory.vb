@@ -1,11 +1,9 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Inventory
-    ' Connection string for MySQL
     Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=employees"
-
+    Private medicineBindingSource As New BindingSource()
     Private Sub Inventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Load medicines into DataGridView
         LoadMedicines()
     End Sub
 
@@ -19,12 +17,11 @@ Public Class Inventory
                     Dim dataTable As New DataTable()
                     adapter.Fill(dataTable)
 
-                    ' Set the DataTable as the DataGridView's DataSource
-                    DataGridView1.DataSource = dataTable
+                    medicineBindingSource.DataSource = dataTable
+                    DataGridView1.DataSource = medicineBindingSource
                 End Using
             End Using
         Catch ex As Exception
-            ' Handle exceptions (e.g., display an error message)
             MessageBox.Show("Error loading medicines: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
@@ -58,7 +55,7 @@ Public Class Inventory
         Me.Close()
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) 
+    Private Sub Button5_Click(sender As Object, e As EventArgs)
         'setting
     End Sub
 
@@ -77,7 +74,6 @@ Public Class Inventory
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        ' Delete selected medicine from database
         If DataGridView1.SelectedRows.Count > 0 Then
             Dim selectedRowIndex As Integer = DataGridView1.SelectedRows(0).Index
             Dim medId As Integer = Convert.ToInt32(DataGridView1.Rows(selectedRowIndex).Cells("med_id").Value)
@@ -93,7 +89,6 @@ Public Class Inventory
                     End Using
                 End Using
 
-                ' Refresh DataGridView to reflect changes
                 LoadMedicines()
                 MessageBox.Show("Medicine deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
