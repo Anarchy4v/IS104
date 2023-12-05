@@ -56,8 +56,9 @@ Public Class Sales
                     Dim totalMedPrice As Object = command.ExecuteScalar()
 
                     If totalMedPrice IsNot Nothing AndAlso Not IsDBNull(totalMedPrice) Then
-                        Dim totalDiscount As Decimal = Convert.ToDecimal(totalMedPrice) / 2
-                        Label7.Text = $"{totalDiscount:N2}"
+                        Dim totalDiscount As Decimal = Convert.ToDecimal(totalMedPrice) * 0.2
+                        Dim finalPrice As Decimal = Convert.ToDecimal(totalMedPrice) - totalDiscount
+                        Label7.Text = $"{finalPrice:N2}"
                     Else
                         Label7.Text = "0.00"
                     End If
