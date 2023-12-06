@@ -44,7 +44,7 @@ Public Class Inventory
         Me.Close()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         'inventory active
     End Sub
 
@@ -53,10 +53,6 @@ Public Class Inventory
         Dim salesReport As New SalesReport()
         salesReport.Show()
         Me.Close()
-    End Sub
-
-    Private Sub Button5_Click(sender As Object, e As EventArgs)
-        'setting
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click

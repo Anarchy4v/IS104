@@ -22,6 +22,11 @@ PharmacyandMedicine
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:PharmacyandMedicine.My.Resources.Resources.Create_An_Account_Page">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:PharmacyandMedicine.My.Resources.Resources.notification">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

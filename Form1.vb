@@ -66,4 +66,5 @@ Public Class Form1
             txtPass.Text = My.Settings.Password
         End If
     End Sub
+
 End Class

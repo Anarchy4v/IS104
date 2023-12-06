@@ -8,7 +8,7 @@ Public Class Sales
         Try
             Using connection As MySqlConnection = New MySqlConnection(connectionString)
                 connection.Open()
-                Dim query As String = "SELECT med_name, med_dosage, UnitName, med_QTY, med_price FROM medicine JOIN DosageUnits ON medicine.DosageUnitID = DosageUnits.ID WHERE LOWER(med_name) LIKE LOWER(@Keyword);"
+                Dim query As String = "SELECT med_name, med_dosage, med_price FROM medicine JOIN DosageUnits ON medicine.DosageUnitID = DosageUnits.ID WHERE LOWER(med_name) LIKE LOWER(@Keyword);"
 
                 Using command As MySqlCommand = New MySqlCommand(query, connection)
                     command.Parameters.AddWithValue("@Keyword", "%" & keyword & "%")
@@ -86,32 +86,32 @@ Public Class Sales
         ComputeTotalDiscount()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         'dashboard
         Dim dashForm As New Dash()
         dashForm.Show()
         Me.Close()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         'point of sale active
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         'inventory
         Dim inv As New Inventory()
         inv.Show()
         Me.Close()
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs)
         'sales report
         Dim salesReport As New SalesReport()
         salesReport.Show()
         Me.Close()
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Button6_Click(sender As Object, e As EventArgs)
         'log out
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to log out?", "Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
@@ -161,4 +161,5 @@ Public Class Sales
         Dim totalWindow As New TotalWindow()
         totalWindow.Show()
     End Sub
+
 End Class
