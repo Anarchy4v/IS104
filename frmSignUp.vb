@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class frmSignUp
-    Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=employees"
+    Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
 
     Private formClosingByButton As Boolean = False
     Private formClosingBySystem As Boolean = False
@@ -30,7 +30,7 @@ Public Class frmSignUp
             Using connection As MySqlConnection = New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim insertQuery As String = "INSERT INTO tbluser (password, email) VALUES (@password, @email);"
+                Dim insertQuery As String = "INSERT INTO tgpuser (password, email) VALUES (@password, @email);"
                 Using insertCommand As MySqlCommand = New MySqlCommand(insertQuery, connection)
                     insertCommand.Parameters.AddWithValue("@password", txtPassword.Text)
                     insertCommand.Parameters.AddWithValue("@email", txtEmail.Text)

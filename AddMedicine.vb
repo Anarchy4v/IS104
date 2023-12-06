@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class AddMedicine
-    Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=employees"
+    Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PopulateDosageUnitsComboBox()
@@ -34,6 +34,10 @@ Public Class AddMedicine
         Label5.Text = "Selected Dosage Unit: " & selectedDosage
     End Sub
 
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+        ' provide some medicine category
+    End Sub
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
             Using connection As MySqlConnection = New MySqlConnection(connectionString)
@@ -55,7 +59,6 @@ Public Class AddMedicine
                 End Using
             End Using
         Catch ex As Exception
-            ' Handle exceptions (e.g., display an error message)
             MessageBox.Show("Error adding medicine: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub

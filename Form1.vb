@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Form1
-    Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=employees"
+    Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
     Private connection As MySqlConnection
     Private command As MySqlCommand
     Private reader As MySqlDataReader
@@ -22,7 +22,7 @@ Public Class Form1
             Using connection = New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim query As String = "SELECT * FROM tbluser WHERE email = @email AND password = @password;"
+                Dim query As String = "SELECT * FROM tgpuser WHERE email = @email AND password = @password;"
                 Using command = New MySqlCommand(query, connection)
                     command.Parameters.AddWithValue("@email", txtUser.Text)
                     command.Parameters.AddWithValue("@password", txtPass.Text)

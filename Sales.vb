@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Sales
-    Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=employees"
+    Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
     Private medicineBindingSource As New BindingSource()
 
     Private Sub LoadMedicines(Optional keyword As String = "")
@@ -86,7 +86,7 @@ Public Class Sales
         ComputeTotalDiscount()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'dashboard
         Dim dashForm As New Dash()
         dashForm.Show()
@@ -97,21 +97,21 @@ Public Class Sales
         'point of sale active
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs)
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         'inventory
         Dim inv As New Inventory()
         inv.Show()
         Me.Close()
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs)
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         'sales report
         Dim salesReport As New SalesReport()
         salesReport.Show()
         Me.Close()
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs)
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         'log out
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to log out?", "Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
@@ -136,10 +136,12 @@ Public Class Sales
     Private Sub MainForm_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         ' keystroke open different shit (need test 4 laptop)
         If e.KeyCode = Keys.F1 Then
-            Call Button8_Click(sender, e)
+            Call Button7_Click(sender, e)
         ElseIf e.KeyCode = Keys.F2 Then
-            Call Button9_Click(sender, e)
+            Call Button8_Click(sender, e)
         ElseIf e.KeyCode = Keys.F3 Then
+            Call Button9_Click(sender, e)
+        ElseIf e.KeyCode = Keys.F4 Then
             Call Button10_Click(sender, e)
         End If
     End Sub
@@ -161,5 +163,4 @@ Public Class Sales
         Dim totalWindow As New TotalWindow()
         totalWindow.Show()
     End Sub
-
 End Class
