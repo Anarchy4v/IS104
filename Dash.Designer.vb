@@ -23,6 +23,7 @@ Partial Class Dash
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dash))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -51,11 +52,17 @@ Partial Class Dash
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -67,11 +74,20 @@ Partial Class Dash
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.PictureBox8)
+        Me.Panel1.Controls.Add(Me.PictureBox6)
         Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Controls.Add(Me.Button6)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(200, 426)
@@ -79,7 +95,10 @@ Partial Class Dash
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.Button6)
+        Me.Panel2.Controls.Add(Me.PictureBox7)
+        Me.Panel2.Controls.Add(Me.PictureBox5)
+        Me.Panel2.Controls.Add(Me.PictureBox4)
+        Me.Panel2.Controls.Add(Me.PictureBox3)
         Me.Panel2.Controls.Add(Me.Button4)
         Me.Panel2.Controls.Add(Me.Button3)
         Me.Panel2.Controls.Add(Me.Button2)
@@ -91,48 +110,65 @@ Partial Class Dash
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(0, 164)
+        Me.Button6.BackColor = System.Drawing.Color.Maroon
+        Me.Button6.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.ForeColor = System.Drawing.Color.White
+        Me.Button6.Location = New System.Drawing.Point(63, 387)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(200, 23)
+        Me.Button6.Size = New System.Drawing.Size(79, 26)
         Me.Button6.TabIndex = 5
         Me.Button6.Text = "Log Out"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.Button6.UseVisualStyleBackColor = False
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(0, 135)
+        Me.Button4.BackColor = System.Drawing.Color.DarkRed
+        Me.Button4.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.SystemColors.Control
+        Me.Button4.Location = New System.Drawing.Point(51, 155)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(200, 23)
+        Me.Button4.Size = New System.Drawing.Size(141, 25)
         Me.Button4.TabIndex = 3
         Me.Button4.Text = "Sales Report"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(0, 106)
+        Me.Button3.BackColor = System.Drawing.Color.DarkRed
+        Me.Button3.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.SystemColors.Control
+        Me.Button3.Location = New System.Drawing.Point(51, 111)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(200, 23)
+        Me.Button3.Size = New System.Drawing.Size(141, 26)
         Me.Button3.TabIndex = 2
         Me.Button3.Text = "Inventory"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(0, 77)
+        Me.Button2.BackColor = System.Drawing.Color.DarkRed
+        Me.Button2.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.Control
+        Me.Button2.Location = New System.Drawing.Point(51, 74)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(200, 23)
+        Me.Button2.Size = New System.Drawing.Size(141, 25)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "Point of Sales"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(0, 48)
+        Me.Button1.BackColor = System.Drawing.Color.DarkRed
+        Me.Button1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.Button1.Location = New System.Drawing.Point(51, 33)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(200, 23)
+        Me.Button1.Size = New System.Drawing.Size(141, 27)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Dashboard"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'DirectorySearcher1
         '
@@ -181,42 +217,42 @@ Partial Class Dash
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Label13.Location = New System.Drawing.Point(335, 213)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(189, 13)
+        Me.Label13.Size = New System.Drawing.Size(231, 13)
         Me.Label13.TabIndex = 13
         Me.Label13.Text = "This tab is sorted by medicine quantity."
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Font = New System.Drawing.Font("Verdana", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.Location = New System.Drawing.Point(331, 177)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(138, 29)
+        Me.Label14.Size = New System.Drawing.Size(141, 29)
         Me.Label14.TabIndex = 12
         Me.Label14.Text = "Top Selling"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Label12.Location = New System.Drawing.Point(7, 213)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(178, 13)
+        Me.Label12.Size = New System.Drawing.Size(218, 13)
         Me.Label12.TabIndex = 11
         Me.Label12.Text = "This tab is sorted by medicine name."
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Font = New System.Drawing.Font("Verdana", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.Location = New System.Drawing.Point(3, 177)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(128, 29)
+        Me.Label11.Size = New System.Drawing.Size(143, 29)
         Me.Label11.TabIndex = 10
         Me.Label11.Text = "Stock Alert"
         '
@@ -354,20 +390,6 @@ Partial Class Dash
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "user"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(3, 10)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(131, 29)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Dashboard"
-        '
-        'Timer1
-        '
-        Me.Timer1.Interval = 2000
-        '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.PharmacyandMedicine.My.Resources.Resources.notification
@@ -378,6 +400,16 @@ Partial Class Dash
         Me.PictureBox2.TabIndex = 5
         Me.PictureBox2.TabStop = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Verdana", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(3, 15)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(143, 29)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Dashboard"
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.PharmacyandMedicine.My.Resources.Resources.profile
@@ -387,6 +419,68 @@ Partial Class Dash
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 2000
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(15, 31)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(30, 29)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 6
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.Location = New System.Drawing.Point(15, 71)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(30, 28)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 7
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
+        Me.PictureBox5.Location = New System.Drawing.Point(15, 110)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(30, 28)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 8
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Location = New System.Drawing.Point(100, 303)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(100, 50)
+        Me.PictureBox6.TabIndex = 9
+        Me.PictureBox6.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
+        Me.PictureBox7.Location = New System.Drawing.Point(15, 153)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(30, 28)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 9
+        Me.PictureBox7.TabStop = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
+        Me.PictureBox8.Location = New System.Drawing.Point(31, 386)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(30, 28)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 10
+        Me.PictureBox8.TabStop = False
         '
         'Dash
         '
@@ -414,6 +508,12 @@ Partial Class Dash
         Me.Panel4.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -451,4 +551,10 @@ Partial Class Dash
     Friend WithEvents Label14 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBox8 As PictureBox
 End Class
