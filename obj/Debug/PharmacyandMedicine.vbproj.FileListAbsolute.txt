@@ -123,3 +123,4 @@ C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.vbproj.CopyComplete
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.exe
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.xml
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.pdb
+E:\Users\rogu\Desktop\SAD_IS\obj\Debug\PharmacyandMedicine.EditMedicine.resources

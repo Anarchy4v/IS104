@@ -18,7 +18,7 @@ Public Class Dash
 
     Private Sub LoadMedicines()
         Try
-            Dim connectionString As String = "server=127.0.0.1;userid=root;password='';database=employees"
+            Dim connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
 
             Using connection As MySqlConnection = New MySqlConnection(connectionString)
                 connection.Open()
@@ -27,7 +27,6 @@ Public Class Dash
 
                 Using command As MySqlCommand = New MySqlCommand(query, connection)
                     Using reader As MySqlDataReader = command.ExecuteReader()
-                        ' Create a DataTable to store the data
                         Dim dataTable As New DataTable()
                         dataTable.Load(reader)
 

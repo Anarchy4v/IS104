@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Inventory
-    Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=employees"
+    Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
     Private medicineBindingSource As New BindingSource()
     Private Sub Inventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadMedicines()

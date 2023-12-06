@@ -183,7 +183,6 @@ Partial Class Inventory
         Me.Button1.BackColor = System.Drawing.Color.DarkRed
         Me.Button1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.Button1.Location = New System.Drawing.Point(48, 40)
         Me.Button1.Name = "Button1"
