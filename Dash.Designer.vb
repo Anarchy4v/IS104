@@ -26,7 +26,6 @@ Partial Class Dash
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dash))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
@@ -65,7 +64,6 @@ Partial Class Dash
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,7 +83,6 @@ Partial Class Dash
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.PictureBox8)
-        Me.Panel1.Controls.Add(Me.PictureBox6)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.Button6)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
@@ -96,20 +93,12 @@ Partial Class Dash
         'PictureBox8
         '
         Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
-        Me.PictureBox8.Location = New System.Drawing.Point(31, 386)
+        Me.PictureBox8.Location = New System.Drawing.Point(15, 387)
         Me.PictureBox8.Name = "PictureBox8"
         Me.PictureBox8.Size = New System.Drawing.Size(30, 28)
         Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox8.TabIndex = 10
         Me.PictureBox8.TabStop = False
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.Location = New System.Drawing.Point(100, 303)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(100, 50)
-        Me.PictureBox6.TabIndex = 9
-        Me.PictureBox6.TabStop = False
         '
         'Panel2
         '
@@ -220,9 +209,9 @@ Partial Class Dash
         Me.Button6.BackColor = System.Drawing.Color.Maroon
         Me.Button6.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Location = New System.Drawing.Point(63, 387)
+        Me.Button6.Location = New System.Drawing.Point(51, 387)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(79, 26)
+        Me.Button6.Size = New System.Drawing.Size(141, 26)
         Me.Button6.TabIndex = 5
         Me.Button6.Text = "Log Out"
         Me.Button6.UseVisualStyleBackColor = False
@@ -493,7 +482,6 @@ Partial Class Dash
         Me.Text = "Dashboard"
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
@@ -551,7 +539,6 @@ Partial Class Dash
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox

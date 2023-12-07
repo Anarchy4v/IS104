@@ -39,8 +39,9 @@ Public Class frmSignUp
 
                     MsgBox("Registration successful!", vbInformation)
 
-                    ' Clear the form
+                    ' Clear the form then close
                     Clear()
+                    Me.Close()
                 End Using
             End Using
         Catch ex As Exception
@@ -61,14 +62,11 @@ Public Class frmSignUp
 
     Private Sub frmSignUp_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If formClosingByButton Then
-            Dim result As DialogResult = MessageBox.Show("Are you sure you want to cancel registration?", "Cancel Register", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
+            Dim result As DialogResult = MessageBox.Show("Exit the registration?", "Cancel Register", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             formClosingByButton = False
-
             e.Cancel = (result = DialogResult.No)
         ElseIf Not formClosingBySystem Then
             Dim result As DialogResult = MessageBox.Show("Are you sure to cancel process?", "Cancel Process", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
             e.Cancel = (result = DialogResult.No)
         End If
     End Sub

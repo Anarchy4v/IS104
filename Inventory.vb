@@ -5,6 +5,7 @@ Public Class Inventory
     Private medicineBindingSource As New BindingSource()
     Private Sub Inventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadMedicines()
+        AddHandler DataGridView1.CellFormatting, AddressOf DataGridView1_CellFormatting
     End Sub
 
     Private Sub LoadMedicines()
@@ -12,7 +13,7 @@ Public Class Inventory
             Using connection As MySqlConnection = New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim query As String = "SELECT med_id, med_name, med_dosage, med_QTY, med_price, UnitName FROM medicine JOIN DosageUnits ON medicine.DosageUnitID = DosageUnits.ID;"
+                Dim query As String = "SELECT med_id, med_name, med_dosage, med_QTY, med_price, category.med_category AS CategoryName, UnitName FROM medicine JOIN DosageUnits ON medicine.DosageUnitID = DosageUnits.ID JOIN category ON medicine.med_category = category.ID;"
                 Using adapter As MySqlDataAdapter = New MySqlDataAdapter(query, connection)
                     Dim dataTable As New DataTable()
                     adapter.Fill(dataTable)
@@ -24,6 +25,17 @@ Public Class Inventory
         Catch ex As Exception
             MessageBox.Show("Error loading medicines: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
+        If e.ColumnIndex = DataGridView1.Columns("med_price").Index AndAlso e.Value IsNot Nothing Then
+            ' Check if the value is a numeric value
+            Dim numericValue As Decimal
+            If Decimal.TryParse(e.Value.ToString(), numericValue) Then
+                e.Value = $"₱{numericValue:N2}"
+                e.FormattingApplied = True
+            End If
+        End If
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged

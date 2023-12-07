@@ -31,25 +31,25 @@ Partial Class frmSignUp
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(440, 177)
+        Me.txtEmail.Location = New System.Drawing.Point(430, 177)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(183, 20)
+        Me.txtEmail.Size = New System.Drawing.Size(193, 20)
         Me.txtEmail.TabIndex = 2
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(440, 244)
+        Me.txtPassword.Location = New System.Drawing.Point(430, 244)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.Size = New System.Drawing.Size(183, 20)
+        Me.txtPassword.Size = New System.Drawing.Size(193, 20)
         Me.txtPassword.TabIndex = 3
         '
         'txtConfirm
         '
-        Me.txtConfirm.Location = New System.Drawing.Point(440, 308)
+        Me.txtConfirm.Location = New System.Drawing.Point(430, 308)
         Me.txtConfirm.Name = "txtConfirm"
         Me.txtConfirm.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtConfirm.Size = New System.Drawing.Size(183, 20)
+        Me.txtConfirm.Size = New System.Drawing.Size(193, 20)
         Me.txtConfirm.TabIndex = 4
         '
         'btnSignUp
@@ -57,9 +57,9 @@ Partial Class frmSignUp
         Me.btnSignUp.BackColor = System.Drawing.Color.Firebrick
         Me.btnSignUp.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSignUp.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnSignUp.Location = New System.Drawing.Point(490, 351)
+        Me.btnSignUp.Location = New System.Drawing.Point(481, 345)
         Me.btnSignUp.Name = "btnSignUp"
-        Me.btnSignUp.Size = New System.Drawing.Size(74, 25)
+        Me.btnSignUp.Size = New System.Drawing.Size(91, 40)
         Me.btnSignUp.TabIndex = 5
         Me.btnSignUp.Text = "SIGN UP"
         Me.btnSignUp.UseVisualStyleBackColor = False
@@ -69,9 +69,9 @@ Partial Class frmSignUp
         Me.Button1.BackColor = System.Drawing.Color.Firebrick
         Me.Button1.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(440, 391)
+        Me.Button1.Location = New System.Drawing.Point(430, 391)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(183, 23)
+        Me.Button1.Size = New System.Drawing.Size(193, 39)
         Me.Button1.TabIndex = 9
         Me.Button1.Text = "Already have account?"
         Me.Button1.UseVisualStyleBackColor = False

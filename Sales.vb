@@ -8,7 +8,7 @@ Public Class Sales
         Try
             Using connection As MySqlConnection = New MySqlConnection(connectionString)
                 connection.Open()
-                Dim query As String = "SELECT med_name, med_dosage, med_price FROM medicine JOIN DosageUnits ON medicine.DosageUnitID = DosageUnits.ID WHERE LOWER(med_name) LIKE LOWER(@Keyword);"
+                Dim query As String = "SELECT med_id, med_name, med_dosage, med_price FROM medicine JOIN DosageUnits ON medicine.DosageUnitID = DosageUnits.ID WHERE LOWER(med_name) LIKE LOWER(@Keyword);"
 
                 Using command As MySqlCommand = New MySqlCommand(query, connection)
                     command.Parameters.AddWithValue("@Keyword", "%" & keyword & "%")
@@ -69,6 +69,16 @@ Public Class Sales
         End Try
     End Sub
 
+    Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles POSData1.CellFormatting
+        If e.ColumnIndex = POSData1.Columns("med_price").Index AndAlso e.Value IsNot Nothing Then
+            Dim numericValue As Decimal
+            If Decimal.TryParse(e.Value.ToString(), numericValue) Then
+                e.Value = $"₱{numericValue:N2}"
+                e.FormattingApplied = True
+            End If
+        End If
+    End Sub
+
     Private Sub LoadDataToDataGridView(reader As MySqlDataReader)
         Dim dataTable As New DataTable()
         dataTable.Load(reader)
@@ -84,6 +94,7 @@ Public Class Sales
         LoadMedicines()
         ComputeTotalMedPrice()
         ComputeTotalDiscount()
+        AddHandler POSData1.CellFormatting, AddressOf DataGridView1_CellFormatting
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -131,19 +142,6 @@ Public Class Sales
         'return for refunds
         Dim returnRefunds As New ReturnRefunds()
         returnRefunds.Show()
-    End Sub
-
-    Private Sub MainForm_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        ' keystroke open different shit (need test 4 laptop)
-        If e.KeyCode = Keys.F1 Then
-            Call Button7_Click(sender, e)
-        ElseIf e.KeyCode = Keys.F2 Then
-            Call Button8_Click(sender, e)
-        ElseIf e.KeyCode = Keys.F3 Then
-            Call Button9_Click(sender, e)
-        ElseIf e.KeyCode = Keys.F4 Then
-            Call Button10_Click(sender, e)
-        End If
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
