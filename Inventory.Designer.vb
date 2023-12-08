@@ -36,7 +36,6 @@ Partial Class Inventory
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Button10 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Button9 = New System.Windows.Forms.Button()
@@ -68,7 +67,7 @@ Partial Class Inventory
         'PictureBox8
         '
         Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
-        Me.PictureBox8.Location = New System.Drawing.Point(42, 363)
+        Me.PictureBox8.Location = New System.Drawing.Point(12, 362)
         Me.PictureBox8.Name = "PictureBox8"
         Me.PictureBox8.Size = New System.Drawing.Size(30, 28)
         Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -80,7 +79,7 @@ Partial Class Inventory
         Me.Button6.BackColor = System.Drawing.Color.Maroon
         Me.Button6.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Location = New System.Drawing.Point(74, 364)
+        Me.Button6.Location = New System.Drawing.Point(48, 364)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(79, 26)
         Me.Button6.TabIndex = 11
@@ -149,7 +148,7 @@ Partial Class Inventory
         Me.Button4.ForeColor = System.Drawing.SystemColors.Control
         Me.Button4.Location = New System.Drawing.Point(48, 162)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(141, 25)
+        Me.Button4.Size = New System.Drawing.Size(107, 25)
         Me.Button4.TabIndex = 13
         Me.Button4.Text = "Sales Report"
         Me.Button4.UseVisualStyleBackColor = False
@@ -161,7 +160,7 @@ Partial Class Inventory
         Me.Button3.ForeColor = System.Drawing.SystemColors.Control
         Me.Button3.Location = New System.Drawing.Point(48, 118)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(141, 26)
+        Me.Button3.Size = New System.Drawing.Size(107, 26)
         Me.Button3.TabIndex = 12
         Me.Button3.Text = "Inventory"
         Me.Button3.UseVisualStyleBackColor = False
@@ -173,7 +172,7 @@ Partial Class Inventory
         Me.Button2.ForeColor = System.Drawing.SystemColors.Control
         Me.Button2.Location = New System.Drawing.Point(48, 81)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(141, 25)
+        Me.Button2.Size = New System.Drawing.Size(107, 25)
         Me.Button2.TabIndex = 11
         Me.Button2.Text = "Point of Sales"
         Me.Button2.UseVisualStyleBackColor = False
@@ -186,7 +185,7 @@ Partial Class Inventory
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.Button1.Location = New System.Drawing.Point(48, 40)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(141, 27)
+        Me.Button1.Size = New System.Drawing.Size(107, 27)
         Me.Button1.TabIndex = 10
         Me.Button1.Text = "Dashboard"
         Me.Button1.UseVisualStyleBackColor = False
@@ -194,7 +193,6 @@ Partial Class Inventory
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.Controls.Add(Me.Button10)
         Me.Panel3.Controls.Add(Me.DataGridView1)
         Me.Panel3.Controls.Add(Me.ComboBox1)
         Me.Panel3.Controls.Add(Me.Button9)
@@ -204,38 +202,29 @@ Partial Class Inventory
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Location = New System.Drawing.Point(218, 12)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(570, 426)
+        Me.Panel3.Size = New System.Drawing.Size(775, 426)
         Me.Panel3.TabIndex = 3
-        '
-        'Button10
-        '
-        Me.Button10.Location = New System.Drawing.Point(192, 34)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(112, 21)
-        Me.Button10.TabIndex = 19
-        Me.Button10.Text = "Search Medicine"
-        Me.Button10.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(8, 61)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(548, 310)
+        Me.DataGridView1.Size = New System.Drawing.Size(755, 310)
         Me.DataGridView1.TabIndex = 18
         '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Test", "Test2", "Test3"})
-        Me.ComboBox1.Location = New System.Drawing.Point(435, 34)
+        Me.ComboBox1.Location = New System.Drawing.Point(526, 34)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(237, 21)
         Me.ComboBox1.TabIndex = 17
         '
         'Button9
         '
-        Me.Button9.Location = New System.Drawing.Point(444, 387)
+        Me.Button9.Location = New System.Drawing.Point(651, 386)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(112, 23)
         Me.Button9.TabIndex = 16
@@ -244,7 +233,7 @@ Partial Class Inventory
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(326, 387)
+        Me.Button8.Location = New System.Drawing.Point(533, 386)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(112, 23)
         Me.Button8.TabIndex = 15
@@ -253,7 +242,7 @@ Partial Class Inventory
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(208, 387)
+        Me.Button7.Location = New System.Drawing.Point(415, 386)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(112, 23)
         Me.Button7.TabIndex = 14
@@ -264,7 +253,7 @@ Partial Class Inventory
         '
         Me.TextBox1.Location = New System.Drawing.Point(8, 35)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(178, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(274, 20)
         Me.TextBox1.TabIndex = 13
         '
         'Label1
@@ -282,10 +271,11 @@ Partial Class Inventory
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkRed
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1005, 450)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Inventory"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inventory"
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
@@ -311,7 +301,6 @@ Partial Class Inventory
     Friend WithEvents Label1 As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Button10 As Button
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox

@@ -63,9 +63,9 @@ Partial Class Form1
         Me.btnLogin.BackColor = System.Drawing.Color.Firebrick
         Me.btnLogin.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnLogin.Location = New System.Drawing.Point(472, 335)
+        Me.btnLogin.Location = New System.Drawing.Point(431, 290)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(95, 42)
+        Me.btnLogin.Size = New System.Drawing.Size(183, 34)
         Me.btnLogin.TabIndex = 4
         Me.btnLogin.Text = "LOGIN"
         Me.btnLogin.UseVisualStyleBackColor = False
@@ -75,11 +75,11 @@ Partial Class Form1
         Me.btnAccount.BackColor = System.Drawing.Color.Firebrick
         Me.btnAccount.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAccount.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnAccount.Location = New System.Drawing.Point(431, 292)
+        Me.btnAccount.Location = New System.Drawing.Point(431, 335)
         Me.btnAccount.Name = "btnAccount"
         Me.btnAccount.Size = New System.Drawing.Size(183, 34)
         Me.btnAccount.TabIndex = 5
-        Me.btnAccount.Text = "Sign up here" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.btnAccount.Text = "Create an account?"
         Me.btnAccount.UseVisualStyleBackColor = False
         '
         'Label2
@@ -121,6 +121,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

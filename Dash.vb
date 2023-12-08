@@ -23,24 +23,14 @@ Public Class Dash
             Using connection As MySqlConnection = New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim query As String = "SELECT med_id, med_name, med_dosage, med_QTY, med_price, UnitName FROM medicine JOIN DosageUnits ON medicine.DosageUnitID = DosageUnits.ID;"
+                Dim query As String = "SELECT * FROM Inventory"
 
                 Using command As MySqlCommand = New MySqlCommand(query, connection)
                     Using reader As MySqlDataReader = command.ExecuteReader()
                         Dim dataTable As New DataTable()
                         dataTable.Load(reader)
 
-                        DataGridView1.Rows.Clear()
-
-                        For Each row As DataRow In dataTable.Rows()
-                            Dim rowIndex As Integer = DataGridView1.Rows.Add()
-                            DataGridView1.Rows(rowIndex).Cells("ID").Value = row("med_id").ToString()
-                            DataGridView1.Rows(rowIndex).Cells("Name").Value = row("med_name").ToString()
-                            DataGridView1.Rows(rowIndex).Cells("Dosage").Value = row("med_dosage").ToString()
-                            DataGridView1.Rows(rowIndex).Cells("Quantity").Value = row("med_QTY").ToString()
-                            DataGridView1.Rows(rowIndex).Cells("Price").Value = row("med_price").ToString()
-                            DataGridView1.Rows(rowIndex).Cells("Unit").Value = row("UnitName").ToString()
-                        Next
+                        DataGridView1.DataSource = dataTable
                     End Using
                 End Using
             End Using
@@ -49,15 +39,9 @@ Public Class Dash
         End Try
     End Sub
 
+
     Private Sub Dash_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
-        ' tarantadong error di pa rin ako pinili T_T
-        DataGridView1.Columns.Add("ID", "ID")
-        DataGridView1.Columns.Add("Name", "Name")
-        DataGridView1.Columns.Add("Dosage", "Dosage")
-        DataGridView1.Columns.Add("Quantity", "Quantity")
-        DataGridView1.Columns.Add("Price", "Price")
-        DataGridView1.Columns.Add("Unit", "Unit")
         'load them in shit
         LoadMedicines()
         'I add this because of fatigue for nothing.
@@ -96,9 +80,14 @@ Public Class Dash
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        'sales report
-        Dim salesReport As New SalesReport()
-        salesReport.Show()
+        ' Assuming you have a function to retrieve order details, replace it with the actual code
+        Dim orderDetails As DataTable = GetOrderDetails()
+
+        ' Open SalesReport form and pass the order details
+        Dim salesReportForm As New SalesReport(orderDetails)
+        salesReportForm.Show()
+
+        ' Close the current Dash form
         Me.Close()
     End Sub
 
@@ -115,6 +104,30 @@ Public Class Dash
         End If
     End Sub
 
+    Private Function GetOrderDetails() As DataTable
+        ' Replace this with the actual code to retrieve order details from your database or another source
+        Try
+            Dim connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
+
+            Using connection As MySqlConnection = New MySqlConnection(connectionString)
+                connection.Open()
+
+                Dim query As String = "SELECT * FROM OrderDetails"
+
+                Using command As MySqlCommand = New MySqlCommand(query, connection)
+                    Using reader As MySqlDataReader = command.ExecuteReader()
+                        Dim dataTable As New DataTable()
+                        dataTable.Load(reader)
+
+                        Return dataTable
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error retrieving order details: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return Nothing
+        End Try
+    End Function
 
     Private Sub TextBox1_TextChanged_1(sender As Object, e As EventArgs)
         'search box???

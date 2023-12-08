@@ -116,7 +116,6 @@ C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.Resource1.resources
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.ReturnRefunds.resources
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.Sales.resources
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.SalesReport.resources
-C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.TotalWindow.resources
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.vbproj.GenerateResource.cache
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.vbproj.CoreCompileInputs.cache
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.vbproj.CopyComplete
@@ -124,3 +123,6 @@ C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.exe
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.xml
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.pdb
 E:\Users\rogu\Desktop\SAD_IS\obj\Debug\PharmacyandMedicine.EditMedicine.resources
+C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.ModalOrderSales2.resources
+C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.EditOrderSales2.resources
+C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.SalesWindow.resources

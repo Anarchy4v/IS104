@@ -1,4 +1,13 @@
 ﻿Public Class SalesReport
+    ' Add a DataTable field to store order details
+    Private _orderDetails As DataTable
+
+    ' Constructor that accepts order details
+    Public Sub New(orderDetails As DataTable)
+        InitializeComponent()
+        _orderDetails = orderDetails
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'dashboard
         Dim dashForm As New Dash()
@@ -20,10 +29,6 @@
         Me.Close()
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs)
-        'sales report active
-    End Sub
-
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to log out?", "Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
@@ -33,15 +38,25 @@
         End If
     End Sub
 
-    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
-        'date picker nu gagawen rito?
-    End Sub
+    Public WriteOnly Property OrderDetails As DataTable
+        Set(value As DataTable)
+            ' Clear existing columns and rows before setting a new data source
+            DataGridView1.DataSource = Nothing
+            _orderDetails = value
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        'data grid style
-    End Sub
+            ' Check if order details are available
+            If _orderDetails IsNot Nothing Then
+                ' Set the DataGridView data source to the order details DataTable
+                DataGridView1.DataSource = _orderDetails
+            End If
+        End Set
+    End Property
 
-    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
-        'print sales report
+    Private Sub SalesReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Check if order details are available
+        If _orderDetails IsNot Nothing Then
+            ' Set the DataGridView data source to the order details DataTable
+            DataGridView1.DataSource = _orderDetails
+        End If
     End Sub
 End Class
