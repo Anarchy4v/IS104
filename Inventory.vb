@@ -3,43 +3,82 @@
 Public Class Inventory
     Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
     Private medicineBindingSource As New BindingSource()
+
     Private Sub Inventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadMedicines()
-        AddHandler DataGridView1.CellFormatting, AddressOf DataGridView1_CellFormatting
+        ' Load data from the Inventory table into DataGridView1
+        LoadInventoryData()
     End Sub
 
-    Private Sub LoadMedicines()
+    Private Function GetOrderDetails() As DataTable
+        ' Replace this with the actual code to retrieve order details from your database or another source
+        Try
+            Dim connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
+
+            Using connection As MySqlConnection = New MySqlConnection(connectionString)
+                connection.Open()
+
+                Dim query As String = "SELECT * FROM OrderDetails"
+
+                Using command As MySqlCommand = New MySqlCommand(query, connection)
+                    Using reader As MySqlDataReader = command.ExecuteReader()
+                        Dim dataTable As New DataTable()
+                        dataTable.Load(reader)
+
+                        Return dataTable
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error retrieving order details: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return Nothing
+        End Try
+    End Function
+
+    Private Sub LoadInventoryData()
         Try
             Using connection As MySqlConnection = New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim query As String = "SELECT med_id, med_name, med_dosage, med_QTY, med_price, category.med_category AS CategoryName, UnitName FROM medicine JOIN DosageUnits ON medicine.DosageUnitID = DosageUnits.ID JOIN category ON medicine.med_category = category.ID;"
-                Using adapter As MySqlDataAdapter = New MySqlDataAdapter(query, connection)
-                    Dim dataTable As New DataTable()
-                    adapter.Fill(dataTable)
+                Dim query As String = "SELECT * FROM Inventory"
 
-                    medicineBindingSource.DataSource = dataTable
-                    DataGridView1.DataSource = medicineBindingSource
+                Using command As MySqlCommand = New MySqlCommand(query, connection)
+                    Using adapter As New MySqlDataAdapter(command)
+                        Dim dataTable As New DataTable()
+                        adapter.Fill(dataTable)
+
+                        ' Set the DataSource for DataGridView1
+                        DataGridView1.DataSource = dataTable
+                        DataGridView1.Columns("inventory_id").Visible = True
+                    End Using
                 End Using
             End Using
         Catch ex As Exception
-            MessageBox.Show("Error loading medicines: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ' Handle any exceptions here
+            MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
-    Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
-        If e.ColumnIndex = DataGridView1.Columns("med_price").Index AndAlso e.Value IsNot Nothing Then
-            ' Check if the value is a numeric value
-            Dim numericValue As Decimal
-            If Decimal.TryParse(e.Value.ToString(), numericValue) Then
-                e.Value = $"₱{numericValue:N2}"
-                e.FormattingApplied = True
-            End If
-        End If
-    End Sub
+    Private Sub SearchMedicine(searchText As String)
+        Try
+            Using connection As MySqlConnection = New MySqlConnection(connectionString)
+                connection.Open()
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-        'search medicine
+                Dim query As String = "SELECT * FROM Inventory WHERE LOWER(item_name) LIKE @searchText"
+                Using command As MySqlCommand = New MySqlCommand(query, connection)
+                    command.Parameters.AddWithValue("@searchText", "%" & searchText & "%")
+
+                    Using adapter As New MySqlDataAdapter(command)
+                        Dim dataTable As New DataTable()
+                        adapter.Fill(dataTable)
+
+                        DataGridView1.DataSource = dataTable
+                        DataGridView1.Columns("inventory_id").Visible = True
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -61,9 +100,14 @@ Public Class Inventory
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        'sales report
-        Dim salesReport As New SalesReport()
-        salesReport.Show()
+        ' Assuming you have a function to retrieve order details, replace it with the actual code
+        Dim orderDetails As DataTable = GetOrderDetails()
+
+        ' Open SalesReport form and pass the order details
+        Dim salesReportForm As New SalesReport(orderDetails)
+        salesReportForm.Show()
+
+        ' Close the current Dash form
         Me.Close()
     End Sub
 
@@ -81,35 +125,21 @@ Public Class Inventory
         'category list
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        If DataGridView1.SelectedRows.Count > 0 Then
-            Dim selectedRowIndex As Integer = DataGridView1.SelectedRows(0).Index
-            Dim medId As Integer = Convert.ToInt32(DataGridView1.Rows(selectedRowIndex).Cells("med_id").Value)
-
-            Try
-                Using connection As MySqlConnection = New MySqlConnection(connectionString)
-                    connection.Open()
-
-                    Dim query As String = "DELETE FROM medicine WHERE med_id = @medId;"
-                    Using command As MySqlCommand = New MySqlCommand(query, connection)
-                        command.Parameters.AddWithValue("@medId", medId)
-                        command.ExecuteNonQuery()
-                    End Using
-                End Using
-
-                LoadMedicines()
-                MessageBox.Show("Medicine deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Catch ex As Exception
-                MessageBox.Show("Error deleting medicine: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-        Else
-            MessageBox.Show("Please select a medicine to delete.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-    End Sub
-
-
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        'edit medicine in data table view
+        ' Edit medicine in data table view
+        ' Check if a row is selected
+        If DataGridView1.SelectedRows.Count > 0 Then
+            ' Get the selected inventory ID from the DataGridView
+            Dim selectedInventoryId As Integer = Convert.ToInt32(DataGridView1.SelectedRows(0).Cells("inventory_id").Value)
+            ' Open the EditMedicine form
+            Dim editMedicineForm As New EditMedicine()
+            editMedicineForm.SetInventoryId(selectedInventoryId)
+            editMedicineForm.LoadMedicineDetails()
+            editMedicineForm.Show()
+        Else
+            ' Display a message if no row is selected
+            MessageBox.Show("Please select a medicine to edit.", "Edit Medicine", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
@@ -118,7 +148,41 @@ Public Class Inventory
         addMed.Show()
     End Sub
 
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-        'search medicine
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        ' Delete selected medicine
+        If DataGridView1.SelectedRows.Count > 0 Then
+            Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this medicine?", "Delete Medicine", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+            If result = DialogResult.Yes Then
+                Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
+                Dim inventoryId As Integer = Convert.ToInt32(selectedRow.Cells("inventory_id").Value)
+
+                Try
+                    Using connection As MySqlConnection = New MySqlConnection(connectionString)
+                        connection.Open()
+
+                        Dim query As String = "DELETE FROM Inventory WHERE inventory_id = @inventoryId"
+
+                        Using command As MySqlCommand = New MySqlCommand(query, connection)
+                            command.Parameters.AddWithValue("@inventoryId", inventoryId)
+                            command.ExecuteNonQuery()
+
+                            ' Refresh the DataGridView after deletion
+                            LoadInventoryData()
+                        End Using
+                    End Using
+                Catch ex As Exception
+                    ' Handle any exceptions here
+                    MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End If
+        Else
+            MessageBox.Show("Please select a medicine to delete.", "Delete Medicine", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        ' Search medicine based on the entered text
+        SearchMedicine(TextBox1.Text)
     End Sub
 End Class

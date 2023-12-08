@@ -22,7 +22,7 @@ Public Class Form1
             Using connection = New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim query As String = "SELECT * FROM tgpuser WHERE email = @email AND password = @password;"
+                Dim query As String = "SELECT * FROM usercredentials WHERE email = @email AND password = @password;"
                 Using command = New MySqlCommand(query, connection)
                     command.Parameters.AddWithValue("@email", txtUser.Text)
                     command.Parameters.AddWithValue("@password", txtPass.Text)

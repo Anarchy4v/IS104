@@ -106,6 +106,12 @@
     <Compile Include="EditMedicine.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EditOrderSales2.Designer.vb">
+      <DependentUpon>EditOrderSales2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditOrderSales2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,12 @@
       <DependentUpon>Inventory.vb</DependentUpon>
     </Compile>
     <Compile Include="Inventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModalOrderSales2.Designer.vb">
+      <DependentUpon>ModalOrderSales2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModalOrderSales2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -169,10 +181,10 @@
     <Compile Include="SalesReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TotalWindow.Designer.vb">
-      <DependentUpon>TotalWindow.vb</DependentUpon>
+    <Compile Include="SalesWindow.Designer.vb">
+      <DependentUpon>SalesWindow.vb</DependentUpon>
     </Compile>
-    <Compile Include="TotalWindow.vb">
+    <Compile Include="SalesWindow.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -192,6 +204,9 @@
     <EmbeddedResource Include="EditMedicine.resx">
       <DependentUpon>EditMedicine.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditOrderSales2.resx">
+      <DependentUpon>EditOrderSales2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory.resx">
       <DependentUpon>Inventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModalOrderSales2.resx">
+      <DependentUpon>ModalOrderSales2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -222,8 +240,8 @@
     <EmbeddedResource Include="SalesReport.resx">
       <DependentUpon>SalesReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TotalWindow.resx">
-      <DependentUpon>TotalWindow.vb</DependentUpon>
+    <EmbeddedResource Include="SalesWindow.resx">
+      <DependentUpon>SalesWindow.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
