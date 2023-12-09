@@ -39,10 +39,7 @@ Partial Class Sales
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
         Me.Button13 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
         Me.POSData1 = New System.Windows.Forms.DataGridView()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -203,10 +200,7 @@ Partial Class Sales
         Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Controls.Add(Me.Button9)
-        Me.Panel3.Controls.Add(Me.Button8)
-        Me.Panel3.Controls.Add(Me.Button7)
         Me.Panel3.Controls.Add(Me.Button13)
-        Me.Panel3.Controls.Add(Me.Button12)
         Me.Panel3.Controls.Add(Me.POSData1)
         Me.Panel3.Controls.Add(Me.TextBox1)
         Me.Panel3.Controls.Add(Me.Panel4)
@@ -248,30 +242,6 @@ Partial Class Sales
         Me.Button9.Text = "Compute Sales"
         Me.Button9.UseVisualStyleBackColor = False
         '
-        'Button8
-        '
-        Me.Button8.BackColor = System.Drawing.Color.DarkRed
-        Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.ForeColor = System.Drawing.SystemColors.Control
-        Me.Button8.Location = New System.Drawing.Point(521, 308)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(283, 50)
-        Me.Button8.TabIndex = 28
-        Me.Button8.Text = "Delete Order"
-        Me.Button8.UseVisualStyleBackColor = False
-        '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.Color.DarkRed
-        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.ForeColor = System.Drawing.SystemColors.Control
-        Me.Button7.Location = New System.Drawing.Point(521, 364)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(283, 50)
-        Me.Button7.TabIndex = 27
-        Me.Button7.Text = "Edit Order"
-        Me.Button7.UseVisualStyleBackColor = False
-        '
         'Button13
         '
         Me.Button13.Location = New System.Drawing.Point(243, 35)
@@ -280,18 +250,6 @@ Partial Class Sales
         Me.Button13.TabIndex = 26
         Me.Button13.Text = "Search Medicine"
         Me.Button13.UseVisualStyleBackColor = True
-        '
-        'Button12
-        '
-        Me.Button12.BackColor = System.Drawing.Color.DarkRed
-        Me.Button12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button12.ForeColor = System.Drawing.SystemColors.Control
-        Me.Button12.Location = New System.Drawing.Point(521, 252)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(283, 50)
-        Me.Button12.TabIndex = 25
-        Me.Button12.Text = "Add Order"
-        Me.Button12.UseVisualStyleBackColor = False
         '
         'POSData1
         '
@@ -396,10 +354,7 @@ Partial Class Sales
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents Button6 As Button
-    Friend WithEvents Button12 As Button
     Friend WithEvents Button13 As Button
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Button7 As Button
     Friend WithEvents Button9 As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
