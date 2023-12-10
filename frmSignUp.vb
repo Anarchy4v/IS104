@@ -34,11 +34,8 @@ Public Class frmSignUp
                 Using insertCommand As MySqlCommand = New MySqlCommand(insertQuery, connection)
                     insertCommand.Parameters.AddWithValue("@password", txtPassword.Text)
                     insertCommand.Parameters.AddWithValue("@email", txtEmail.Text)
-
                     insertCommand.ExecuteNonQuery()
-
                     MsgBox("Registration successful!", vbInformation)
-
                     ' Clear the form then close
                     Clear()
                     Me.Close()

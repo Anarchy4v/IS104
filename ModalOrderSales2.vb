@@ -1,36 +1,44 @@
-﻿Public Class ModalOrderSales2
-    ' Property to set the user ID
-    Private _userId As Integer
+﻿Imports PharmacyandMedicine.SalesWindow
 
-    Public Property UserId As Integer
-        Get
-            Return _userId
-        End Get
-        Set(value As Integer)
-            _userId = value
-        End Set
-    End Property
+Public Class ModalOrderSales2
+    Public Property OrderDetails As OrderDetails
 
-    Public ReadOnly Property OrderQuantity As Integer
-        Get
-            Dim quantity As Integer
-            If Integer.TryParse(TextBox1.Text, quantity) Then
-                Return quantity
-            Else
-                Return 0 ' Default value or handle it differently based on your requirements
-            End If
-        End Get
-    End Property
+    ' Add parameters to the constructor
+    Public Sub New(itemName As String, initialQuantity As Integer)
+        InitializeComponent()
+        OrderDetails = New OrderDetails()
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        ' Add any additional logic you need when the OK button is clicked
-        Me.DialogResult = DialogResult.OK
-        Me.Close()
+        ' Set initial values
+        OrderDetails.ItemName = itemName
+        OrderDetails.Quantity = initialQuantity
     End Sub
 
     Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
         If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
+        End If
+    End Sub
+
+    Private Sub ModalOrderSales2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Display initial values
+        TextBox1.Text = OrderDetails.Quantity.ToString()
+    End Sub
+
+    Private Sub ButtonSubmit_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ' Validate and get the quantity input
+        If Integer.TryParse(TextBox1.Text, Me.OrderDetails.Quantity) Then
+            ' Set the price based on your logic (e.g., quantity * item_price)
+            ' For now, let's assume a fixed price of 10. Adjust as needed.
+            Me.OrderDetails.Price = Me.OrderDetails.Quantity * 2
+
+            ' Show a dialog indicating that the medicine has been added successfully
+            MessageBox.Show("Medicine added successfully to Ordering Details.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' Close the ModalOrderSales2 form
+            Me.DialogResult = DialogResult.OK
+            Me.Close()
+        Else
+            MessageBox.Show("Invalid quantity. Please enter a valid number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 End Class

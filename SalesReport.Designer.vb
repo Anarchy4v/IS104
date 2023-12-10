@@ -36,6 +36,7 @@ Partial Class SalesReport
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Button12 = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -49,7 +50,7 @@ Partial Class SalesReport
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Total = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -58,10 +59,10 @@ Partial Class SalesReport
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -203,6 +204,7 @@ Partial Class SalesReport
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.Button5)
         Me.Panel3.Controls.Add(Me.DataGridView1)
         Me.Panel3.Controls.Add(Me.Button12)
         Me.Panel3.Controls.Add(Me.Label11)
@@ -215,6 +217,14 @@ Partial Class SalesReport
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(780, 426)
         Me.Panel3.TabIndex = 3
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(8, 70)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(528, 337)
+        Me.DataGridView1.TabIndex = 25
         '
         'Button12
         '
@@ -352,13 +362,14 @@ Partial Class SalesReport
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Sales Report"
         '
-        'DataGridView1
+        'Button5
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(8, 70)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(528, 337)
-        Me.DataGridView1.TabIndex = 25
+        Me.Button5.Location = New System.Drawing.Point(542, 265)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(229, 37)
+        Me.Button5.TabIndex = 26
+        Me.Button5.Text = "Refresh"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'SalesReport
         '
@@ -380,11 +391,11 @@ Partial Class SalesReport
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -416,4 +427,5 @@ Partial Class SalesReport
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents Button6 As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Button5 As Button
 End Class
