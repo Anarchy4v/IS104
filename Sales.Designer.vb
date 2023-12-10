@@ -36,15 +36,14 @@ Partial Class Sales
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button13 = New System.Windows.Forms.Button()
         Me.POSData1 = New System.Windows.Forms.DataGridView()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Total = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,7 +54,6 @@ Partial Class Sales
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.POSData1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -197,18 +195,53 @@ Partial Class Sales
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.Button7)
+        Me.Panel3.Controls.Add(Me.Button5)
+        Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Controls.Add(Me.Button9)
-        Me.Panel3.Controls.Add(Me.Button13)
         Me.Panel3.Controls.Add(Me.POSData1)
         Me.Panel3.Controls.Add(Me.TextBox1)
-        Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Location = New System.Drawing.Point(186, 12)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(816, 426)
         Me.Panel3.TabIndex = 2
+        '
+        'Button7
+        '
+        Me.Button7.BackColor = System.Drawing.Color.DarkRed
+        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.ForeColor = System.Drawing.SystemColors.Control
+        Me.Button7.Location = New System.Drawing.Point(521, 186)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(285, 49)
+        Me.Button7.TabIndex = 34
+        Me.Button7.Text = "Add Order"
+        Me.Button7.UseVisualStyleBackColor = False
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.Color.DarkRed
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.ForeColor = System.Drawing.SystemColors.Control
+        Me.Button5.Location = New System.Drawing.Point(523, 131)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(284, 49)
+        Me.Button5.TabIndex = 33
+        Me.Button5.Text = "Refresh"
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(518, 303)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(210, 40)
+        Me.Label4.TabIndex = 32
+        Me.Label4.Text = "The data is being fetch from " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the Inventory items."
         '
         'Label3
         '
@@ -235,21 +268,12 @@ Partial Class Sales
         Me.Button9.BackColor = System.Drawing.Color.DarkRed
         Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button9.ForeColor = System.Drawing.SystemColors.Control
-        Me.Button9.Location = New System.Drawing.Point(521, 194)
+        Me.Button9.Location = New System.Drawing.Point(522, 241)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(285, 49)
         Me.Button9.TabIndex = 29
         Me.Button9.Text = "Compute Sales"
         Me.Button9.UseVisualStyleBackColor = False
-        '
-        'Button13
-        '
-        Me.Button13.Location = New System.Drawing.Point(243, 35)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(100, 20)
-        Me.Button13.TabIndex = 26
-        Me.Button13.Text = "Search Medicine"
-        Me.Button13.UseVisualStyleBackColor = True
         '
         'POSData1
         '
@@ -265,38 +289,6 @@ Partial Class Sales
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(229, 20)
         Me.TextBox1.TabIndex = 13
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.DarkRed
-        Me.Panel4.Controls.Add(Me.Label6)
-        Me.Panel4.Controls.Add(Me.Total)
-        Me.Panel4.Location = New System.Drawing.Point(521, 134)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(285, 54)
-        Me.Panel4.TabIndex = 12
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(173, 17)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(40, 20)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "0.00"
-        '
-        'Total
-        '
-        Me.Total.AutoSize = True
-        Me.Total.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Total.ForeColor = System.Drawing.Color.White
-        Me.Total.Location = New System.Drawing.Point(15, 17)
-        Me.Total.Name = "Total"
-        Me.Total.Size = New System.Drawing.Size(44, 20)
-        Me.Total.TabIndex = 0
-        Me.Total.Text = "Total"
         '
         'Label1
         '
@@ -329,8 +321,6 @@ Partial Class Sales
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.POSData1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -339,10 +329,7 @@ Partial Class Sales
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents Panel4 As Panel
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Total As Label
-    Friend WithEvents Label6 As Label
     Friend WithEvents POSData1 As DataGridView
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
@@ -354,8 +341,10 @@ Partial Class Sales
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents Button6 As Button
-    Friend WithEvents Button13 As Button
     Friend WithEvents Button9 As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button7 As Button
 End Class

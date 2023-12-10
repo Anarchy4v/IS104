@@ -94,12 +94,6 @@
     <Compile Include="Compute.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DiscountWindow.Designer.vb">
-      <DependentUpon>DiscountWindow.vb</DependentUpon>
-    </Compile>
-    <Compile Include="DiscountWindow.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="EditMedicine.Designer.vb">
       <DependentUpon>EditMedicine.vb</DependentUpon>
     </Compile>
@@ -197,9 +191,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dash.resx">
       <DependentUpon>Dash.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DiscountWindow.resx">
-      <DependentUpon>DiscountWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditMedicine.resx">
       <DependentUpon>EditMedicine.vb</DependentUpon>
