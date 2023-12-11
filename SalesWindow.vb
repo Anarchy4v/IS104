@@ -123,7 +123,7 @@ Public Class SalesWindow
 
             Label6.Text = $"₱{result:N2}"
         Else
-            Label6.Text = "Invalid input"
+            Label6.Text = "Insufficient"
         End If
     End Sub
 End Class

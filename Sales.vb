@@ -57,7 +57,7 @@ Public Class Sales
             Using connection As New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim query As String = "SELECT inventory_id, item_name, item_qty, item_price FROM Inventory WHERE LOWER(item_name) LIKE @keyword"
+                Dim query As String = "SELECT inventory_id, item_name, category, item_qty, item_price FROM Inventory WHERE LOWER(item_name) LIKE @keyword"
                 Using cmd As New MySqlCommand(query, connection)
                     cmd.Parameters.AddWithValue("@keyword", "%" & keyword & "%")
 
@@ -148,5 +148,31 @@ Public Class Sales
         End If
 
         SalesWindow.salesWindowInstance.Show()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        ReloadPOSData()
+    End Sub
+
+    ' Method to reload and refresh the DataGridView
+    Private Sub ReloadPOSData()
+        Try
+            Using connection As New MySqlConnection(connectionString)
+                connection.Open()
+
+                Dim query As String = "SELECT inventory_id, item_name, category, item_qty, item_price FROM Inventory"
+                Using cmd As New MySqlCommand(query, connection)
+                    Using adapter As New MySqlDataAdapter(cmd)
+                        ' Clear existing data
+                        orderDataTable.Clear()
+
+                        ' Fill with new data
+                        adapter.Fill(orderDataTable)
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error reloading data: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class
