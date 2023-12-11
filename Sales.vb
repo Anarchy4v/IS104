@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports PharmacyandMedicine.SalesWindow
 
 Public Class Sales
     Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
@@ -37,7 +38,7 @@ Public Class Sales
             Using connection As New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim query As String = "SELECT inventory_id, item_name, item_qty, item_price FROM Inventory"
+                Dim query As String = "SELECT inventory_id, item_name, category, item_qty, item_price FROM Inventory"
                 Using cmd As New MySqlCommand(query, connection)
                     Using adapter As New MySqlDataAdapter(cmd)
                         adapter.Fill(orderDataTable)
@@ -56,7 +57,7 @@ Public Class Sales
             Using connection As New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim query As String = "SELECT item_name FROM Inventory WHERE LOWER(item_name) LIKE @keyword"
+                Dim query As String = "SELECT inventory_id, item_name, item_qty, item_price FROM Inventory WHERE LOWER(item_name) LIKE @keyword"
                 Using cmd As New MySqlCommand(query, connection)
                     cmd.Parameters.AddWithValue("@keyword", "%" & keyword & "%")
 
@@ -80,22 +81,66 @@ Public Class Sales
             End If
 
             Dim initialQuantity As Integer = 1
-            Dim modalOrderForm As New ModalOrderSales2(selectedItemName, initialQuantity)
+
+            ' Obtain or provide the salesId value here
+            Dim salesId As Integer
+
+            ' Logic to obtain the latest salesId from your database
+            Try
+                Using connection As New MySqlConnection(connectionString)
+                    connection.Open()
+
+                    Dim query As String = "SELECT MAX(sales_id) FROM compute_sales"
+                    Using cmd As New MySqlCommand(query, connection)
+                        Dim result As Object = cmd.ExecuteScalar()
+                        If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
+                            salesId = Convert.ToInt32(result) + 1
+                        Else
+                            salesId = 1 ' If no salesId exists, start from 1
+                        End If
+                    End Using
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error obtaining salesId: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Exit Sub ' Exit the sub if there's an error obtaining salesId
+            End Try
+
+            ' Retrieve dosage information from the INVENTORY table
+            Dim itemDosage As String = RetrieveDosage(selectedItemName)
+
+            ' Pass the salesId and itemDosage when creating ModalOrderSales2 instance
+            Dim modalOrderForm As New ModalOrderSales2(selectedItemName, initialQuantity, salesId, itemDosage)
             modalOrderForm.ShowDialog()
-
-            If modalOrderForm.DialogResult = DialogResult.OK Then
-                Dim orderDetails As SalesWindow.OrderDetails = modalOrderForm.OrderDetails
-
-                If SalesWindow.salesWindowInstance IsNot Nothing AndAlso Not SalesWindow.salesWindowInstance.IsDisposed Then
-                    SalesWindow.salesWindowInstance.AddOrderToDataTable(orderDetails.ItemName, orderDetails.Quantity, orderDetails.Price)
-                Else
-                    MessageBox.Show("SalesWindow is not available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
-            End If
         Else
             MessageBox.Show("Please select an item from the list before adding an order.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
+
+    Private Function RetrieveDosage(itemName As String) As String
+        Dim dosage As String = String.Empty
+
+        Try
+            Using connection As New MySqlConnection(connectionString)
+                connection.Open()
+
+                Dim query As String = "SELECT item_dosage FROM inventory WHERE item_name = @item_name"
+
+                Using cmd As New MySqlCommand(query, connection)
+                    cmd.Parameters.AddWithValue("@item_name", itemName)
+
+                    Using reader As MySqlDataReader = cmd.ExecuteReader()
+                        If reader.Read() Then
+                            dosage = Convert.ToString(reader("item_dosage"))
+                        End If
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error retrieving dosage information: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+        Return dosage
+    End Function
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         If SalesWindow.salesWindowInstance Is Nothing OrElse SalesWindow.salesWindowInstance.IsDisposed Then

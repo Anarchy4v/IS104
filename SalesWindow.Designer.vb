@@ -97,7 +97,7 @@ Partial Class SalesWindow
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(777, 171)
+        Me.Label5.Location = New System.Drawing.Point(750, 171)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(67, 31)
         Me.Label5.TabIndex = 6
@@ -107,7 +107,7 @@ Partial Class SalesWindow
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(777, 300)
+        Me.Label6.Location = New System.Drawing.Point(750, 300)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(67, 31)
         Me.Label6.TabIndex = 7
@@ -137,7 +137,7 @@ Partial Class SalesWindow
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(777, 31)
+        Me.Label8.Location = New System.Drawing.Point(750, 31)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(67, 31)
         Me.Label8.TabIndex = 11

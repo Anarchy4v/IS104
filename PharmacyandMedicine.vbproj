@@ -246,6 +246,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="tgp_DB.drawio" />
     <None Include="tgp_meds.csv" />
   </ItemGroup>
   <ItemGroup>

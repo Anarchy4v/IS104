@@ -30,7 +30,6 @@ E:\Users\rogu\Desktop\SAD-IS\bin\Debug\System.Memory.dll
 E:\Users\rogu\Desktop\SAD-IS\bin\Debug\System.Threading.Tasks.Extensions.dll
 E:\Users\rogu\Desktop\SAD-IS\bin\Debug\System.Numerics.Vectors.dll
 E:\Users\rogu\Desktop\SAD-IS\bin\Debug\System.Buffers.dll
-E:\Users\rogu\Desktop\SAD-IS\bin\Debug\MySql.Data.xml
 E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.vbproj.AssemblyReference.cache
 E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.Dash.resources
 E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.Form1.resources
@@ -125,3 +124,12 @@ E:\Users\rogu\Desktop\SAD_IS\obj\Debug\PharmacyandMedicine.EditMedicine.resource
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.ModalOrderSales2.resources
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.EditOrderSales2.resources
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.SalesWindow.resources
+E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.AddMedicine.resources
+E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.Compute.resources
+E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.EditMedicine.resources
+E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.EditOrderSales2.resources
+E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.Inventory.resources
+E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.ModalOrderSales2.resources
+E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.ReturnRefunds.resources
+E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.SalesReport.resources
+E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.SalesWindow.resources
