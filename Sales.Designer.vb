@@ -39,8 +39,6 @@ Partial Class Sales
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.POSData1 = New System.Windows.Forms.DataGridView()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -198,8 +196,6 @@ Partial Class Sales
         Me.Panel3.Controls.Add(Me.Button7)
         Me.Panel3.Controls.Add(Me.Button5)
         Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Controls.Add(Me.Button9)
         Me.Panel3.Controls.Add(Me.POSData1)
         Me.Panel3.Controls.Add(Me.TextBox1)
@@ -214,7 +210,7 @@ Partial Class Sales
         Me.Button7.BackColor = System.Drawing.Color.DarkRed
         Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.ForeColor = System.Drawing.SystemColors.Control
-        Me.Button7.Location = New System.Drawing.Point(521, 186)
+        Me.Button7.Location = New System.Drawing.Point(521, 114)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(285, 49)
         Me.Button7.TabIndex = 34
@@ -226,7 +222,7 @@ Partial Class Sales
         Me.Button5.BackColor = System.Drawing.Color.DarkRed
         Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.ForeColor = System.Drawing.SystemColors.Control
-        Me.Button5.Location = New System.Drawing.Point(523, 131)
+        Me.Button5.Location = New System.Drawing.Point(523, 59)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(284, 49)
         Me.Button5.TabIndex = 33
@@ -237,38 +233,18 @@ Partial Class Sales
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(518, 303)
+        Me.Label4.Location = New System.Drawing.Point(518, 230)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(210, 40)
         Me.Label4.TabIndex = 32
         Me.Label4.Text = "The data is being fetch from " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the Inventory items."
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(528, 82)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(36, 25)
-        Me.Label3.TabIndex = 31
-        Me.Label3.Text = "...."
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(526, 46)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(190, 25)
-        Me.Label2.TabIndex = 30
-        Me.Label2.Text = "Update will appear"
         '
         'Button9
         '
         Me.Button9.BackColor = System.Drawing.Color.DarkRed
         Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button9.ForeColor = System.Drawing.SystemColors.Control
-        Me.Button9.Location = New System.Drawing.Point(522, 241)
+        Me.Button9.Location = New System.Drawing.Point(522, 169)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(285, 49)
         Me.Button9.TabIndex = 29
@@ -342,8 +318,6 @@ Partial Class Sales
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents Button6 As Button
     Friend WithEvents Button9 As Button
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Button5 As Button
     Friend WithEvents Button7 As Button

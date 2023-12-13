@@ -38,25 +38,4 @@
         End If
     End Sub
 
-    Public WriteOnly Property OrderDetails As DataTable
-        Set(value As DataTable)
-            ' Clear existing columns and rows before setting a new data source
-            DataGridView1.DataSource = Nothing
-            _orderDetails = value
-
-            ' Check if order details are available
-            If _orderDetails IsNot Nothing Then
-                ' Set the DataGridView data source to the order details DataTable
-                DataGridView1.DataSource = _orderDetails
-            End If
-        End Set
-    End Property
-
-    Private Sub SalesReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Check if order details are available
-        If _orderDetails IsNot Nothing Then
-            ' Set the DataGridView data source to the order details DataTable
-            DataGridView1.DataSource = _orderDetails
-        End If
-    End Sub
 End Class
