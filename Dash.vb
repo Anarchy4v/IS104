@@ -23,14 +23,21 @@ Public Class Dash
             Using connection As MySqlConnection = New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim query As String = "SELECT * FROM Inventory"
+                ' Modify the query to retrieve rows where @item_qty is less than or equal to 50
+                Dim query As String = "SELECT item_name, item_qty, item_dosage, category, item_price FROM Inventory WHERE item_qty <= 50"
 
                 Using command As MySqlCommand = New MySqlCommand(query, connection)
                     Using reader As MySqlDataReader = command.ExecuteReader()
                         Dim dataTable As New DataTable()
                         dataTable.Load(reader)
 
-                        DataGridView1.DataSource = dataTable
+                        If dataTable.Rows.Count > 0 Then
+                            DataGridView1.DataSource = dataTable
+                        Else
+                            'MessageBox.Show("No medicines stock alert at the moment.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            ' Optionally, you can clear the DataGridView if no rows are found
+                            DataGridView1.DataSource = Nothing
+                        End If
                     End Using
                 End Using
             End Using
@@ -39,10 +46,8 @@ Public Class Dash
         End Try
     End Sub
 
-
     Private Sub Dash_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
-        'load them in shit
         LoadMedicines()
         'I add this because of fatigue for nothing.
         Me.AcceptButton = Nothing
@@ -64,12 +69,6 @@ Public Class Dash
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
 
-    End Sub
-
-    'dashboard text
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-        'idk who's the data source?
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -148,5 +147,10 @@ Public Class Dash
         Label8.Text = randomNumber1.ToString()
         Label9.Text = randomNumber2.ToString()
         Label10.Text = randomNumber3.ToString()
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick_2(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        'I need you to display on load the existing rows who does have an few @item_qty VALUE left starting from 50 in exact.
+        'Use the inventory table declaration in my database to fetch and display it into DataGridView1
     End Sub
 End Class

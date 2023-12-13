@@ -35,12 +35,13 @@ Partial Class SalesReport
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Button12 = New System.Windows.Forms.Button()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -50,7 +51,6 @@ Partial Class SalesReport
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Total = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -58,10 +58,10 @@ Partial Class SalesReport
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel3.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -70,6 +70,8 @@ Partial Class SalesReport
         Me.Panel1.Controls.Add(Me.PictureBox8)
         Me.Panel1.Controls.Add(Me.Button6)
         Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Controls.Add(Me.Label11)
+        Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(200, 426)
@@ -201,15 +203,35 @@ Partial Class SalesReport
         Me.Button1.Text = "Dashboard"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.White
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(77, 50)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(47, 24)
+        Me.Label11.TabIndex = 22
+        Me.Label11.Text = "user"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.White
+        Me.PictureBox1.Image = Global.PharmacyandMedicine.My.Resources.Resources.profile
+        Me.PictureBox1.Location = New System.Drawing.Point(78, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(46, 44)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 20
+        Me.PictureBox1.TabStop = False
+        '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.PictureBox2)
         Me.Panel3.Controls.Add(Me.Button5)
         Me.Panel3.Controls.Add(Me.DataGridView1)
         Me.Panel3.Controls.Add(Me.Button12)
-        Me.Panel3.Controls.Add(Me.Label11)
-        Me.Panel3.Controls.Add(Me.PictureBox2)
-        Me.Panel3.Controls.Add(Me.PictureBox1)
         Me.Panel3.Controls.Add(Me.DateTimePicker1)
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Controls.Add(Me.Label1)
@@ -217,6 +239,25 @@ Partial Class SalesReport
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(780, 426)
         Me.Panel3.TabIndex = 3
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.PharmacyandMedicine.My.Resources.Resource1.The_Generics_Pharmacy_removebg_preview_1
+        Me.PictureBox2.Location = New System.Drawing.Point(542, 14)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(101, 50)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 27
+        Me.PictureBox2.TabStop = False
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(542, 265)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(229, 37)
+        Me.Button5.TabIndex = 26
+        Me.Button5.Text = "Refresh"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
@@ -234,36 +275,6 @@ Partial Class SalesReport
         Me.Button12.TabIndex = 24
         Me.Button12.Text = "Print Sales Report"
         Me.Button12.UseVisualStyleBackColor = True
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(628, 12)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(47, 24)
-        Me.Label11.TabIndex = 22
-        Me.Label11.Text = "user"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.PharmacyandMedicine.My.Resources.Resources.notification
-        Me.PictureBox2.Location = New System.Drawing.Point(519, 10)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(37, 38)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 21
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.PharmacyandMedicine.My.Resources.Resources.profile
-        Me.PictureBox1.Location = New System.Drawing.Point(568, 7)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(46, 44)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 20
-        Me.PictureBox1.TabStop = False
         '
         'DateTimePicker1
         '
@@ -362,15 +373,6 @@ Partial Class SalesReport
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Sales Report"
         '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(542, 265)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(229, 37)
-        Me.Button5.TabIndex = 26
-        Me.Button5.Text = "Refresh"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
         'SalesReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -383,17 +385,18 @@ Partial Class SalesReport
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SalesReport"
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
@@ -413,7 +416,6 @@ Partial Class SalesReport
     Friend WithEvents Label1 As Label
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label11 As Label
-    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button12 As Button
     Friend WithEvents PictureBox7 As PictureBox
@@ -428,4 +430,5 @@ Partial Class SalesReport
     Friend WithEvents Button6 As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Button5 As Button
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

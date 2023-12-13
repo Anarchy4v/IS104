@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class SalesWindow
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class SalesWindow
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -35,6 +35,7 @@ Partial Class SalesWindow
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -42,7 +43,7 @@ Partial Class SalesWindow
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(571, 86)
+        Me.Label1.Location = New System.Drawing.Point(572, 88)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(159, 25)
         Me.Label1.TabIndex = 0
@@ -52,7 +53,7 @@ Partial Class SalesWindow
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(570, 171)
+        Me.Label2.Location = New System.Drawing.Point(571, 173)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(139, 25)
         Me.Label2.TabIndex = 1
@@ -62,7 +63,7 @@ Partial Class SalesWindow
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.Label3.Location = New System.Drawing.Point(570, 221)
+        Me.Label3.Location = New System.Drawing.Point(571, 223)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(63, 26)
         Me.Label3.TabIndex = 2
@@ -72,7 +73,7 @@ Partial Class SalesWindow
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.Label4.Location = New System.Drawing.Point(570, 300)
+        Me.Label4.Location = New System.Drawing.Point(571, 302)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(88, 26)
         Me.Label4.TabIndex = 3
@@ -81,14 +82,14 @@ Partial Class SalesWindow
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(576, 127)
+        Me.ComboBox1.Location = New System.Drawing.Point(577, 129)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(304, 21)
         Me.ComboBox1.TabIndex = 4
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(576, 262)
+        Me.TextBox1.Location = New System.Drawing.Point(577, 264)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(304, 20)
         Me.TextBox1.TabIndex = 5
@@ -97,7 +98,7 @@ Partial Class SalesWindow
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(750, 171)
+        Me.Label5.Location = New System.Drawing.Point(751, 173)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(67, 31)
         Me.Label5.TabIndex = 6
@@ -107,7 +108,7 @@ Partial Class SalesWindow
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(750, 300)
+        Me.Label6.Location = New System.Drawing.Point(751, 302)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(67, 31)
         Me.Label6.TabIndex = 7
@@ -116,7 +117,7 @@ Partial Class SalesWindow
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(576, 349)
+        Me.Button1.Location = New System.Drawing.Point(577, 351)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(304, 39)
         Me.Button1.TabIndex = 8
@@ -137,7 +138,7 @@ Partial Class SalesWindow
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(750, 31)
+        Me.Label8.Location = New System.Drawing.Point(751, 33)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(67, 31)
         Me.Label8.TabIndex = 11
@@ -147,7 +148,7 @@ Partial Class SalesWindow
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.Label9.Location = New System.Drawing.Point(570, 35)
+        Me.Label9.Location = New System.Drawing.Point(571, 37)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(59, 26)
         Me.Label9.TabIndex = 10
@@ -161,11 +162,22 @@ Partial Class SalesWindow
         Me.DataGridView1.Size = New System.Drawing.Size(515, 353)
         Me.DataGridView1.TabIndex = 12
         '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(577, 397)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(304, 39)
+        Me.Button2.TabIndex = 13
+        Me.Button2.Text = "Delete Record"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'SalesWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(939, 445)
+        Me.ClientSize = New System.Drawing.Size(939, 465)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label9)
@@ -201,4 +213,5 @@ Partial Class SalesWindow
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Button2 As Button
 End Class

@@ -36,6 +36,8 @@ Partial Class Dash
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.DirectorySearcher1 = New System.DirectoryServices.DirectorySearcher()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
@@ -56,10 +58,7 @@ Partial Class Dash
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
@@ -69,6 +68,7 @@ Partial Class Dash
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,8 +76,6 @@ Partial Class Dash
         Me.Panel6.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -85,6 +83,8 @@ Partial Class Dash
         Me.Panel1.Controls.Add(Me.PictureBox8)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.Button6)
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(200, 426)
@@ -216,6 +216,28 @@ Partial Class Dash
         Me.Button6.Text = "Log Out"
         Me.Button6.UseVisualStyleBackColor = False
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.White
+        Me.PictureBox1.Image = Global.PharmacyandMedicine.My.Resources.Resources.profile
+        Me.PictureBox1.Location = New System.Drawing.Point(79, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(46, 44)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.White
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(13, 50)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(47, 24)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "user"
+        '
         'DirectorySearcher1
         '
         Me.DirectorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01")
@@ -235,10 +257,7 @@ Partial Class Dash
         Me.Panel3.Controls.Add(Me.Panel6)
         Me.Panel3.Controls.Add(Me.Panel5)
         Me.Panel3.Controls.Add(Me.Panel4)
-        Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.PictureBox2)
         Me.Panel3.Controls.Add(Me.Label1)
-        Me.Panel3.Controls.Add(Me.PictureBox1)
         Me.Panel3.Location = New System.Drawing.Point(218, 12)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(655, 426)
@@ -267,9 +286,9 @@ Partial Class Dash
         Me.Label13.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Label13.Location = New System.Drawing.Point(335, 213)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(231, 13)
+        Me.Label13.Size = New System.Drawing.Size(244, 13)
         Me.Label13.TabIndex = 13
-        Me.Label13.Text = "This tab is sorted by medicine quantity."
+        Me.Label13.Text = "This tab is sorted by medicine purchases."
         '
         'Label14
         '
@@ -288,9 +307,9 @@ Partial Class Dash
         Me.Label12.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Label12.Location = New System.Drawing.Point(7, 213)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(218, 13)
+        Me.Label12.Size = New System.Drawing.Size(278, 13)
         Me.Label12.TabIndex = 11
-        Me.Label12.Text = "This tab is sorted by medicine name."
+        Me.Label12.Text = "This tab is sorted by medicine few quantity left."
         '
         'Label11
         '
@@ -426,26 +445,6 @@ Partial Class Dash
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Statistics Revenue"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(489, 8)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(47, 24)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "user"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.PharmacyandMedicine.My.Resources.Resources.notification
-        Me.PictureBox2.Location = New System.Drawing.Point(380, 6)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(37, 38)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 5
-        Me.PictureBox2.TabStop = False
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -455,16 +454,6 @@ Partial Class Dash
         Me.Label1.Size = New System.Drawing.Size(143, 29)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Dashboard"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.PharmacyandMedicine.My.Resources.Resources.profile
-        Me.PictureBox1.Location = New System.Drawing.Point(429, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(46, 44)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
         '
         'Timer1
         '
@@ -482,12 +471,14 @@ Partial Class Dash
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Dashboard"
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -500,8 +491,6 @@ Partial Class Dash
         Me.Panel5.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -518,7 +507,6 @@ Partial Class Dash
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel5 As Panel

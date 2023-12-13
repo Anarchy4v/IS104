@@ -9,31 +9,6 @@ Public Class Inventory
         LoadInventoryData()
     End Sub
 
-    Private Function GetOrderDetails() As DataTable
-        ' Replace this with the actual code to retrieve order details from your database or another source
-        Try
-            Dim connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
-
-            Using connection As MySqlConnection = New MySqlConnection(connectionString)
-                connection.Open()
-
-                Dim query As String = "SELECT * FROM OrderDetails"
-
-                Using command As MySqlCommand = New MySqlCommand(query, connection)
-                    Using reader As MySqlDataReader = command.ExecuteReader()
-                        Dim dataTable As New DataTable()
-                        dataTable.Load(reader)
-
-                        Return dataTable
-                    End Using
-                End Using
-            End Using
-        Catch ex As Exception
-            MessageBox.Show("Error retrieving order details: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return Nothing
-        End Try
-    End Function
-
     Private Sub LoadInventoryData()
         Try
             Using connection As MySqlConnection = New MySqlConnection(connectionString)
@@ -45,15 +20,27 @@ Public Class Inventory
                     Using adapter As New MySqlDataAdapter(command)
                         Dim dataTable As New DataTable()
                         adapter.Fill(dataTable)
-
-                        ' Set the DataSource for DataGridView1
-                        DataGridView1.DataSource = dataTable
-                        DataGridView1.Columns("inventory_id").Visible = True
+                        DataGridView1.Columns.Clear()
+                        DataGridView1.Columns.Add("InventoryId", "Inventory ID")
+                        DataGridView1.Columns.Add("MedicineName", "Medicine Name")
+                        DataGridView1.Columns.Add("MedicineDosage", "Medicine Dosage")
+                        DataGridView1.Columns.Add("MedicineCategory", "Medicine Category")
+                        DataGridView1.Columns.Add("MedicineQuantity", "Medicine Quantity")
+                        DataGridView1.Columns.Add("MedicinePrice", "Medicine Price")
+                        For Each row As DataRow In dataTable.Rows
+                            DataGridView1.Rows.Add(
+                            row("inventory_id"),
+                            row("item_name"),
+                            row("item_dosage"),
+                            row("category"),
+                            row("item_qty"),
+                            row("item_price")
+                        )
+                        Next
                     End Using
                 End Using
             End Using
         Catch ex As Exception
-            ' Handle any exceptions here
             MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
@@ -70,7 +57,13 @@ Public Class Inventory
                     Using adapter As New MySqlDataAdapter(command)
                         Dim dataTable As New DataTable()
                         adapter.Fill(dataTable)
-
+                        DataGridView1.Columns.Clear()
+                        DataGridView1.Columns.Add("InventoryId", "Inventory ID")
+                        DataGridView1.Columns.Add("MedicineName", "Medicine Name")
+                        DataGridView1.Columns.Add("MedicineDosage", "Medicine Dosage")
+                        DataGridView1.Columns.Add("MedicineCategory", "Medicine Category")
+                        DataGridView1.Columns.Add("MedicineQuantity", "Medicine Quantity")
+                        DataGridView1.Columns.Add("MedicinePrice", "Medicine Price")
                         DataGridView1.DataSource = dataTable
                         DataGridView1.Columns("inventory_id").Visible = True
                     End Using
@@ -100,15 +93,7 @@ Public Class Inventory
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        ' Assuming you have a function to retrieve order details, replace it with the actual code
-        Dim orderDetails As DataTable = GetOrderDetails()
-
-        ' Open SalesReport form and pass the order details
-        Dim salesReportForm As New SalesReport(orderDetails)
-        salesReportForm.Show()
-
-        ' Close the current Dash form
-        Me.Close()
+        'sales report
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
@@ -122,30 +107,23 @@ Public Class Inventory
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        ' Edit medicine in data table view
-        ' Check if a row is selected
         If DataGridView1.SelectedRows.Count > 0 Then
-            ' Get the selected inventory ID from the DataGridView
             Dim selectedInventoryId As Integer = Convert.ToInt32(DataGridView1.SelectedRows(0).Cells("inventory_id").Value)
-            ' Open the EditMedicine form
             Dim editMedicineForm As New EditMedicine()
             editMedicineForm.SetInventoryId(selectedInventoryId)
             editMedicineForm.LoadMedicineDetails()
             editMedicineForm.Show()
         Else
-            ' Display a message if no row is selected
             MessageBox.Show("Please select a medicine to edit.", "Edit Medicine", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-        'add medicine in data table view
         Dim addMed As New AddMedicine()
         addMed.Show()
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        ' Delete selected medicine
         If DataGridView1.SelectedRows.Count > 0 Then
             Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this medicine?", "Delete Medicine", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
@@ -162,13 +140,10 @@ Public Class Inventory
                         Using command As MySqlCommand = New MySqlCommand(query, connection)
                             command.Parameters.AddWithValue("@inventoryId", inventoryId)
                             command.ExecuteNonQuery()
-
-                            ' Refresh the DataGridView after deletion
                             LoadInventoryData()
                         End Using
                     End Using
                 Catch ex As Exception
-                    ' Handle any exceptions here
                     MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
             End If
@@ -178,7 +153,6 @@ Public Class Inventory
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-        ' Search medicine based on the entered text
         SearchMedicine(TextBox1.Text)
     End Sub
 End Class
