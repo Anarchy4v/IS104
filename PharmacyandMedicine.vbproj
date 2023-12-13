@@ -94,6 +94,12 @@
     <Compile Include="Compute.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CustomerGeneratedReport.Designer.vb">
+      <DependentUpon>CustomerGeneratedReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerGeneratedReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EditMedicine.Designer.vb">
       <DependentUpon>EditMedicine.vb</DependentUpon>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compute.resx">
       <DependentUpon>Compute.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerGeneratedReport.resx">
+      <DependentUpon>CustomerGeneratedReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dash.resx">
       <DependentUpon>Dash.vb</DependentUpon>
