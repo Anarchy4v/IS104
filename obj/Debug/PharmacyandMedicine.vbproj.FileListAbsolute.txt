@@ -133,3 +133,4 @@ E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.ModalOrderSales2.reso
 E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.ReturnRefunds.resources
 E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.SalesReport.resources
 E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.SalesWindow.resources
+E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.CustomerGeneratedReport.resources

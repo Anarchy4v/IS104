@@ -57,13 +57,10 @@ Public Class Inventory
                     Using adapter As New MySqlDataAdapter(command)
                         Dim dataTable As New DataTable()
                         adapter.Fill(dataTable)
+
+                        ' Clear existing columns before adding new ones
                         DataGridView1.Columns.Clear()
-                        DataGridView1.Columns.Add("InventoryId", "Inventory ID")
-                        DataGridView1.Columns.Add("MedicineName", "Medicine Name")
-                        DataGridView1.Columns.Add("MedicineDosage", "Medicine Dosage")
-                        DataGridView1.Columns.Add("MedicineCategory", "Medicine Category")
-                        DataGridView1.Columns.Add("MedicineQuantity", "Medicine Quantity")
-                        DataGridView1.Columns.Add("MedicinePrice", "Medicine Price")
+                        ' Set the DataSource for DataGridView1
                         DataGridView1.DataSource = dataTable
                         DataGridView1.Columns("inventory_id").Visible = True
                     End Using
