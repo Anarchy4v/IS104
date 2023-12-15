@@ -33,8 +33,6 @@ Partial Class EditMedicine
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Dosage = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
@@ -52,18 +50,16 @@ Partial Class EditMedicine
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.TextBox3)
         Me.Panel1.Controls.Add(Me.ComboBox1)
-        Me.Panel1.Controls.Add(Me.Dosage)
-        Me.Panel1.Controls.Add(Me.TextBox2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Location = New System.Drawing.Point(89, 42)
+        Me.Panel1.Location = New System.Drawing.Point(89, 27)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(367, 366)
+        Me.Panel1.Size = New System.Drawing.Size(367, 306)
         Me.Panel1.TabIndex = 1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(191, 326)
+        Me.Button2.Location = New System.Drawing.Point(191, 274)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(123, 23)
         Me.Button2.TabIndex = 26
@@ -72,7 +68,7 @@ Partial Class EditMedicine
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(55, 326)
+        Me.Button1.Location = New System.Drawing.Point(55, 274)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(123, 23)
         Me.Button1.TabIndex = 25
@@ -82,7 +78,7 @@ Partial Class EditMedicine
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(52, 162)
+        Me.Label6.Location = New System.Drawing.Point(52, 110)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(95, 13)
         Me.Label6.TabIndex = 24
@@ -91,7 +87,7 @@ Partial Class EditMedicine
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(55, 184)
+        Me.ComboBox2.Location = New System.Drawing.Point(55, 132)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(259, 21)
         Me.ComboBox2.TabIndex = 23
@@ -99,7 +95,7 @@ Partial Class EditMedicine
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(52, 106)
+        Me.Label4.Location = New System.Drawing.Point(52, 54)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(71, 13)
         Me.Label4.TabIndex = 22
@@ -108,7 +104,7 @@ Partial Class EditMedicine
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(52, 270)
+        Me.Label3.Location = New System.Drawing.Point(52, 218)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(31, 13)
         Me.Label3.TabIndex = 21
@@ -116,7 +112,7 @@ Partial Class EditMedicine
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(55, 291)
+        Me.TextBox4.Location = New System.Drawing.Point(55, 239)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(259, 20)
         Me.TextBox4.TabIndex = 20
@@ -124,7 +120,7 @@ Partial Class EditMedicine
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(52, 218)
+        Me.Label2.Location = New System.Drawing.Point(52, 166)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(29, 13)
         Me.Label2.TabIndex = 19
@@ -132,7 +128,7 @@ Partial Class EditMedicine
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(55, 239)
+        Me.TextBox3.Location = New System.Drawing.Point(55, 187)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(259, 20)
         Me.TextBox3.TabIndex = 18
@@ -140,26 +136,10 @@ Partial Class EditMedicine
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(55, 128)
+        Me.ComboBox1.Location = New System.Drawing.Point(55, 76)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(259, 21)
         Me.ComboBox1.TabIndex = 17
-        '
-        'Dosage
-        '
-        Me.Dosage.AutoSize = True
-        Me.Dosage.Location = New System.Drawing.Point(52, 53)
-        Me.Dosage.Name = "Dosage"
-        Me.Dosage.Size = New System.Drawing.Size(90, 13)
-        Me.Dosage.TabIndex = 16
-        Me.Dosage.Text = "Dosage (Number)"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(55, 74)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(259, 20)
-        Me.TextBox2.TabIndex = 15
         '
         'Label1
         '
@@ -181,7 +161,7 @@ Partial Class EditMedicine
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(545, 450)
+        Me.ClientSize = New System.Drawing.Size(545, 359)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "EditMedicine"
         Me.Text = "EditMedicine"
@@ -200,8 +180,6 @@ Partial Class EditMedicine
     Friend WithEvents Label2 As Label
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Dosage As Label
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button2 As Button

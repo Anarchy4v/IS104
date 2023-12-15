@@ -130,7 +130,7 @@ Partial Class CustomerGeneratedReport
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(245, 3)
+        Me.Label3.Location = New System.Drawing.Point(242, 3)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(66, 24)
         Me.Label3.TabIndex = 3

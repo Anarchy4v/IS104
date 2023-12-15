@@ -1,25 +1,14 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports Mysqlx
 
 Public Class Dash
+    Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
     Dim random As New Random()
     Private formClosingByButton As Boolean = False
     Private formClosingBySystem As Boolean = False
-    Private userEmail As String
 
-    Public Property UserEmailProperty As String
-        Get
-            Return userEmail
-        End Get
-        Set(value As String)
-            userEmail = value
-            Label2.Text = userEmail
-        End Set
-    End Property
-
-    Private Sub LoadMedicines()
+    Private Sub LoadStockAlert()
         Try
-            Dim connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
-
             Using connection As MySqlConnection = New MySqlConnection(connectionString)
                 connection.Open()
 
@@ -34,9 +23,34 @@ Public Class Dash
                         If dataTable.Rows.Count > 0 Then
                             DataGridView1.DataSource = dataTable
                         Else
-                            'MessageBox.Show("No medicines stock alert at the moment.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            ' Optionally, you can clear the DataGridView if no rows are found
                             DataGridView1.DataSource = Nothing
+                        End If
+                    End Using
+                End Using
+
+                Dim userEmail As String = GetUserEmail(connection)
+                Label2.Text = userEmail
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error loading medicines: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub LoadBestSellers()
+        Try
+            Using connection As MySqlConnection = New MySqlConnection(connectionString)
+                connection.Open()
+                Dim query As String = "SELECT item_name, item_qty, item_dosage, category, item_price FROM Inventory WHERE item_qty <= 400"
+
+                Using command As MySqlCommand = New MySqlCommand(query, connection)
+                    Using reader As MySqlDataReader = command.ExecuteReader()
+                        Dim dataTable As New DataTable()
+                        dataTable.Load(reader)
+
+                        If dataTable.Rows.Count > 0 Then
+                            DataGridView2.DataSource = dataTable
+                        Else
+                            DataGridView2.DataSource = Nothing
                         End If
                     End Using
                 End Using
@@ -48,8 +62,8 @@ Public Class Dash
 
     Private Sub Dash_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
-        LoadMedicines()
-        'I add this because of fatigue for nothing.
+        LoadStockAlert()
+        LoadBestSellers()
         Me.AcceptButton = Nothing
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -61,14 +75,6 @@ Public Class Dash
         Dim sales As New Sales()
         sales.Show()
         Me.Close()
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs)
-        'idk this
-    End Sub
-
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
-
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -122,14 +128,6 @@ Public Class Dash
         End Try
     End Function
 
-    Private Sub TextBox1_TextChanged_1(sender As Object, e As EventArgs)
-        'search box???
-    End Sub
-
-    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs)
-        'data grid view
-    End Sub
-
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         ' Generate syempre live count haha
         Dim randomNumber As Integer = random.Next(1, 301)
@@ -143,8 +141,24 @@ Public Class Dash
         Label10.Text = randomNumber3.ToString()
     End Sub
 
-    Private Sub DataGridView1_CellContentClick_2(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        'I need you to display on load the existing rows who does have an few @item_qty VALUE left starting from 50 in exact.
-        'Use the inventory table declaration in my database to fetch and display it into DataGridView1
-    End Sub
+    Private Function GetUserEmail(connection As MySqlConnection) As String
+        ' Fetch the email from the usercredentials table
+        Dim userEmail As String = String.Empty
+
+        Dim query As String = "SELECT email FROM usercredentials WHERE user_id = @userId"
+        Using command As MySqlCommand = New MySqlCommand(query, connection)
+            ' Assuming you have a user_id associated with the current user
+            ' Replace 1 with the actual user_id or parameterize it as needed
+            command.Parameters.AddWithValue("@userId", 1)
+
+            Using reader As MySqlDataReader = command.ExecuteReader()
+                If reader.Read() Then
+                    userEmail = reader("email").ToString()
+                End If
+            End Using
+        End Using
+
+        Return userEmail
+    End Function
+
 End Class

@@ -28,12 +28,6 @@ Public Class AddMedicine
         End If
     End Sub
 
-    Private Sub TextBox2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox2.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
-
     Private Sub TextBox3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox3.KeyPress
         If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
@@ -59,8 +53,8 @@ Public Class AddMedicine
                     command.Parameters.AddWithValue("@item_name", TextBox1.Text)
                     command.Parameters.AddWithValue("@item_dosage", ComboBox1.Text)
                     command.Parameters.AddWithValue("@category", ComboBox2.Text)
-                    command.Parameters.AddWithValue("@item_qty", Convert.ToInt32(TextBox2.Text))
-                    command.Parameters.AddWithValue("@item_price", Convert.ToDecimal(TextBox3.Text))
+                    command.Parameters.AddWithValue("@item_qty", Convert.ToInt32(TextBox3.Text))
+                    command.Parameters.AddWithValue("@item_price", Convert.ToDecimal(TextBox4.Text))
 
                     ' Execute the SQL command
                     command.ExecuteNonQuery()

@@ -5,7 +5,6 @@ Public Class Inventory
     Private medicineBindingSource As New BindingSource()
 
     Private Sub Inventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Load data from the Inventory table into DataGridView1
         LoadInventoryData()
     End Sub
 
@@ -21,7 +20,7 @@ Public Class Inventory
                         Dim dataTable As New DataTable()
                         adapter.Fill(dataTable)
                         DataGridView1.Columns.Clear()
-                        DataGridView1.Columns.Add("InventoryId", "Inventory ID")
+                        DataGridView1.Columns.Add("inventory_id", "inventory_id")
                         DataGridView1.Columns.Add("MedicineName", "Medicine Name")
                         DataGridView1.Columns.Add("MedicineDosage", "Medicine Dosage")
                         DataGridView1.Columns.Add("MedicineCategory", "Medicine Category")
@@ -39,6 +38,9 @@ Public Class Inventory
                         Next
                     End Using
                 End Using
+
+                Dim userEmail As String = GetUserEmail(connection)
+                Label2.Text = userEmail
             End Using
         Catch ex As Exception
             MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -107,16 +109,27 @@ Public Class Inventory
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        ' Check if a row is selected in your DataGridView (assuming you have one)
         If DataGridView1.SelectedRows.Count > 0 Then
+            ' Get the selected inventory_id from the DataGridView (adjust column index as needed)
             Dim selectedInventoryId As Integer = Convert.ToInt32(DataGridView1.SelectedRows(0).Cells("inventory_id").Value)
+
+            ' Instantiate the EditMedicine form
             Dim editMedicineForm As New EditMedicine()
+
+            ' Set the inventoryId for the selected medicine
             editMedicineForm.SetInventoryId(selectedInventoryId)
+
+            ' Load and display medicine details
             editMedicineForm.LoadMedicineDetails()
-            editMedicineForm.Show()
+
+            ' Show the EditMedicine form
+            editMedicineForm.ShowDialog()
         Else
-            MessageBox.Show("Please select a medicine to edit.", "Edit Medicine", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Please select a medicine to edit.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
+
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         Dim addMed As New AddMedicine()
@@ -151,6 +164,26 @@ Public Class Inventory
             MessageBox.Show("Please select a medicine to delete.", "Delete Medicine", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
+
+    Private Function GetUserEmail(connection As MySqlConnection) As String
+        ' Fetch the email from the usercredentials table
+        Dim userEmail As String = String.Empty
+
+        Dim query As String = "SELECT email FROM usercredentials WHERE user_id = @userId"
+        Using command As MySqlCommand = New MySqlCommand(query, connection)
+            ' Assuming you have a user_id associated with the current user
+            ' Replace 1 with the actual user_id or parameterize it as needed
+            command.Parameters.AddWithValue("@userId", 1)
+
+            Using reader As MySqlDataReader = command.ExecuteReader()
+                If reader.Read() Then
+                    userEmail = reader("email").ToString()
+                End If
+            End Using
+        End Using
+
+        Return userEmail
+    End Function
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
         SearchMedicine(TextBox1.Text)

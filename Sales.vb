@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports Mysqlx
 Imports PharmacyandMedicine.SalesWindow
 
 Public Class Sales
@@ -44,6 +45,9 @@ Public Class Sales
                         adapter.Fill(orderDataTable)
                     End Using
                 End Using
+
+                Dim userEmail As String = GetUserEmail(connection)
+                Label2.Text = userEmail
             End Using
         Catch ex As Exception
             MessageBox.Show("Error loading data: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -181,4 +185,25 @@ Public Class Sales
         Inventor.Show()
         Me.Close()
     End Sub
+
+    Private Function GetUserEmail(connection As MySqlConnection) As String
+        ' Fetch the email from the usercredentials table
+        Dim userEmail As String = String.Empty
+
+        Dim query As String = "SELECT email FROM usercredentials WHERE user_id = @userId"
+        Using command As MySqlCommand = New MySqlCommand(query, connection)
+            ' Assuming you have a user_id associated with the current user
+            ' Replace 1 with the actual user_id or parameterize it as needed
+            command.Parameters.AddWithValue("@userId", 1)
+
+            Using reader As MySqlDataReader = command.ExecuteReader()
+                If reader.Read() Then
+                    userEmail = reader("email").ToString()
+                End If
+            End Using
+        End Using
+
+        Return userEmail
+    End Function
+
 End Class
