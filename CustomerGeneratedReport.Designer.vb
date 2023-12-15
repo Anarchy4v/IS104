@@ -95,7 +95,7 @@ Partial Class CustomerGeneratedReport
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(331, 0)
+        Me.Label2.Location = New System.Drawing.Point(266, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(66, 24)
         Me.Label2.TabIndex = 1
@@ -169,7 +169,7 @@ Partial Class CustomerGeneratedReport
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(328, 0)
+        Me.Label5.Location = New System.Drawing.Point(245, 3)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(66, 24)
         Me.Label5.TabIndex = 5
@@ -179,7 +179,7 @@ Partial Class CustomerGeneratedReport
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(0, 0)
+        Me.Label6.Location = New System.Drawing.Point(3, 3)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(83, 24)
         Me.Label6.TabIndex = 4
@@ -198,7 +198,7 @@ Partial Class CustomerGeneratedReport
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(328, 0)
+        Me.Label7.Location = New System.Drawing.Point(245, 3)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(66, 24)
         Me.Label7.TabIndex = 7
@@ -208,7 +208,7 @@ Partial Class CustomerGeneratedReport
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(0, 0)
+        Me.Label8.Location = New System.Drawing.Point(3, 3)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(122, 24)
         Me.Label8.TabIndex = 6
@@ -227,7 +227,7 @@ Partial Class CustomerGeneratedReport
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(328, 0)
+        Me.Label9.Location = New System.Drawing.Point(245, 3)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(66, 24)
         Me.Label9.TabIndex = 9
@@ -237,7 +237,7 @@ Partial Class CustomerGeneratedReport
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(0, 0)
+        Me.Label10.Location = New System.Drawing.Point(3, 3)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(53, 24)
         Me.Label10.TabIndex = 8
@@ -256,7 +256,7 @@ Partial Class CustomerGeneratedReport
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(321, 0)
+        Me.Label11.Location = New System.Drawing.Point(245, 3)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(76, 24)
         Me.Label11.TabIndex = 11
@@ -266,7 +266,7 @@ Partial Class CustomerGeneratedReport
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(0, 0)
+        Me.Label12.Location = New System.Drawing.Point(3, 3)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(77, 24)
         Me.Label12.TabIndex = 10
@@ -285,7 +285,7 @@ Partial Class CustomerGeneratedReport
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(321, 0)
+        Me.Label13.Location = New System.Drawing.Point(245, 3)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(76, 24)
         Me.Label13.TabIndex = 13
@@ -295,7 +295,7 @@ Partial Class CustomerGeneratedReport
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(0, 0)
+        Me.Label14.Location = New System.Drawing.Point(3, 3)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(48, 24)
         Me.Label14.TabIndex = 12

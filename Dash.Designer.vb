@@ -40,6 +40,7 @@ Partial Class Dash
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DirectorySearcher1 = New System.DirectoryServices.DirectorySearcher()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -61,7 +62,6 @@ Partial Class Dash
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -71,13 +71,13 @@ Partial Class Dash
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -266,6 +266,16 @@ Partial Class Dash
         Me.Panel3.Size = New System.Drawing.Size(655, 426)
         Me.Panel3.TabIndex = 1
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.PharmacyandMedicine.My.Resources.Resource1.The_Generics_Pharmacy_removebg_preview_1
+        Me.PictureBox2.Location = New System.Drawing.Point(544, 0)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(101, 50)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 28
+        Me.PictureBox2.TabStop = False
+        '
         'DataGridView2
         '
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -289,9 +299,9 @@ Partial Class Dash
         Me.Label13.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Label13.Location = New System.Drawing.Point(335, 213)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(244, 13)
+        Me.Label13.Size = New System.Drawing.Size(280, 13)
         Me.Label13.TabIndex = 13
-        Me.Label13.Text = "This tab is sorted by medicine purchases."
+        Me.Label13.Text = "This tab is sorted by many medicine purchases."
         '
         'Label14
         '
@@ -312,7 +322,7 @@ Partial Class Dash
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(278, 13)
         Me.Label12.TabIndex = 11
-        Me.Label12.Text = "This tab is sorted by medicine few quantity left."
+        Me.Label12.Text = "This tab is sorted by few medicine quantity left." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label11
         '
@@ -462,16 +472,6 @@ Partial Class Dash
         '
         Me.Timer1.Interval = 2000
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.PharmacyandMedicine.My.Resources.Resource1.The_Generics_Pharmacy_removebg_preview_1
-        Me.PictureBox2.Location = New System.Drawing.Point(544, 0)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(101, 50)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 28
-        Me.PictureBox2.TabStop = False
-        '
         'Dash
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -494,6 +494,7 @@ Partial Class Dash
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel7.ResumeLayout(False)
@@ -504,7 +505,6 @@ Partial Class Dash
         Me.Panel5.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -1,7 +1,13 @@
-﻿Imports System.Data.SqlClient
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Button
+﻿Imports System.Security.Cryptography.X509Certificates
 Imports MySql.Data.MySqlClient
-Imports Mysqlx
+
+Public Module SharedVariables
+    Public totalSalesPrice As Decimal
+    Public cashValue As Decimal
+    Public Result As Decimal
+    Public vatAmount As Decimal
+    Public discount As Decimal
+End Module
 
 Public Class SalesWindow
     Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
@@ -18,7 +24,6 @@ Public Class SalesWindow
         Public Property SalesId As Integer
     End Class
 
-    ' Add a method to retrieve and display compute_sales data
     Private Sub DisplayComputeSalesData()
         Try
             Using connection As New MySqlConnection(connectionString)
@@ -28,24 +33,35 @@ Public Class SalesWindow
 
                 Using cmd As New MySqlCommand(query, connection)
                     Using reader As MySqlDataReader = cmd.ExecuteReader()
-                        ' Assuming you have a DataGridView named dgvComputeSales in your form
                         DataGridView1.Rows.Clear()
                         Dim totalSalesPrice As Decimal = 0
+                        Dim totalQty As Integer = 0
 
                         While reader.Read()
                             DataGridView1.Rows.Add(
-                                reader("sales_id"),
-                                reader("sales_name"),
-                                reader("sales_dosage"),
-                                reader("sales_qty"),
-                                reader("sales_price")
-                            )
+                            reader("sales_id"),
+                            reader("sales_name"),
+                            reader("sales_dosage"),
+                            reader("sales_qty"),
+                            reader("sales_price")
+                        )
 
                             totalSalesPrice += Convert.ToDecimal(reader("sales_price"))
+                            totalQty += Convert.ToInt32(reader("sales_qty"))
                         End While
 
-                        ' Display the total sales price in Label8
+                        Dim vatPercentage As Decimal
+                        If totalQty <= 10 Then
+                            vatPercentage = 0.04 '
+                        ElseIf totalQty <= 20 Then
+                            vatPercentage = 0.08 '
+                        Else
+                            vatPercentage = 0.12 '
+                        End If
+
+                        Dim vatAmount As Decimal = totalSalesPrice * vatPercentage
                         Label8.Text = $"₱{totalSalesPrice:N2}"
+                        Label10.Text = $"VAT: ₱{vatAmount:N2} (QTY: {totalQty})"
                     End Using
                 End Using
             End Using
@@ -100,7 +116,6 @@ Public Class SalesWindow
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
         If Not Decimal.TryParse(TextBox1.Text, Nothing) AndAlso TextBox1.Text <> "." Then
             TextBox1.Clear()
-            MessageBox.Show("Please enter a valid numeric value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
         UpdateChangeLabel()
     End Sub
@@ -237,4 +252,35 @@ Public Class SalesWindow
             MessageBox.Show("Error refreshing DataGridView: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ' Save relevant data to SharedVariables
+        SharedVariables.totalSalesPrice = totalSalesPrice
+        SharedVariables.cashValue = Decimal.Parse(TextBox1.Text)
+        SharedVariables.Result = Decimal.Parse(Label6.Text.Replace("₱", "").Replace(",", "").Trim())
+        SharedVariables.vatAmount = Decimal.Parse(Label10.Text.Replace("VAT: ₱", "").Replace(",", "").Split(" "c)(0))
+        SharedVariables.discount = GetDiscountValue()
+
+        'I need you to provide the VALUES of these following:
+        'order_id = ? (it can be added automatically its AUTO_INCREMENT in my DB)
+        'user_id = ? (it has a relationship to my user_id this is ID of the user the expected value is like (1 - eyelash@test.com)
+
+        ' Open CustomerGeneratedReport form
+        Dim customerReportForm As New CustomerGeneratedReport()
+        customerReportForm.Show()
+    End Sub
+
+    Private Function GetDiscountValue() As Decimal
+        Dim discountValue As Decimal = 0
+
+        Select Case ComboBox1.SelectedItem.ToString()
+            Case "SENIOR / PWD DISCOUNT: 20%"
+                discountValue = 0.2
+            Case "SENIOR / PWD WITH BOOK AND PRESCRIPTION: 32%"
+                discountValue = 0.32
+            Case "Regular Discount (0%)"
+                discountValue = 0
+        End Select
+
+        Return discountValue
+    End Function
 End Class
