@@ -48,8 +48,6 @@ Public Class Form1
                 My.Settings.Save()
 
                 Dim dashForm As New Dash()
-                dashForm.UserEmailProperty = strEmail
-
                 dashForm.Show()
                 Me.Hide()
             Else

@@ -30,8 +30,6 @@ Partial Class AddMedicine
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Dosage = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -44,7 +42,7 @@ Partial Class AddMedicine
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(186, 345)
+        Me.Button2.Location = New System.Drawing.Point(186, 279)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(123, 23)
         Me.Button2.TabIndex = 3
@@ -53,7 +51,7 @@ Partial Class AddMedicine
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(50, 345)
+        Me.Button1.Location = New System.Drawing.Point(50, 279)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(123, 23)
         Me.Button1.TabIndex = 2
@@ -63,7 +61,7 @@ Partial Class AddMedicine
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(47, 106)
+        Me.Label4.Location = New System.Drawing.Point(47, 57)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(71, 13)
         Me.Label4.TabIndex = 9
@@ -72,7 +70,7 @@ Partial Class AddMedicine
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(47, 270)
+        Me.Label3.Location = New System.Drawing.Point(47, 225)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(31, 13)
         Me.Label3.TabIndex = 8
@@ -80,7 +78,7 @@ Partial Class AddMedicine
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(50, 291)
+        Me.TextBox4.Location = New System.Drawing.Point(50, 246)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(259, 20)
         Me.TextBox4.TabIndex = 7
@@ -88,7 +86,7 @@ Partial Class AddMedicine
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(47, 218)
+        Me.Label2.Location = New System.Drawing.Point(47, 171)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(29, 13)
         Me.Label2.TabIndex = 6
@@ -96,7 +94,7 @@ Partial Class AddMedicine
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(50, 239)
+        Me.TextBox3.Location = New System.Drawing.Point(50, 192)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(259, 20)
         Me.TextBox3.TabIndex = 5
@@ -104,26 +102,10 @@ Partial Class AddMedicine
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(50, 128)
+        Me.ComboBox1.Location = New System.Drawing.Point(50, 79)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(259, 21)
         Me.ComboBox1.TabIndex = 4
-        '
-        'Dosage
-        '
-        Me.Dosage.AutoSize = True
-        Me.Dosage.Location = New System.Drawing.Point(47, 53)
-        Me.Dosage.Name = "Dosage"
-        Me.Dosage.Size = New System.Drawing.Size(90, 13)
-        Me.Dosage.TabIndex = 3
-        Me.Dosage.Text = "Dosage (Number)"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(50, 74)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(259, 20)
-        Me.TextBox2.TabIndex = 2
         '
         'Label1
         '
@@ -143,16 +125,16 @@ Partial Class AddMedicine
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Location = New System.Drawing.Point(90, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(367, 379)
+        Me.Panel1.Size = New System.Drawing.Size(367, 359)
         Me.Panel1.TabIndex = 0
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Button2)
+        Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.ComboBox2)
         Me.Panel2.Controls.Add(Me.Label4)
@@ -161,8 +143,6 @@ Partial Class AddMedicine
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.TextBox3)
         Me.Panel2.Controls.Add(Me.ComboBox1)
-        Me.Panel2.Controls.Add(Me.Dosage)
-        Me.Panel2.Controls.Add(Me.TextBox2)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.TextBox1)
         Me.Panel2.Location = New System.Drawing.Point(0, 21)
@@ -173,7 +153,7 @@ Partial Class AddMedicine
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(47, 162)
+        Me.Label6.Location = New System.Drawing.Point(47, 116)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(95, 13)
         Me.Label6.TabIndex = 12
@@ -182,7 +162,7 @@ Partial Class AddMedicine
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(50, 184)
+        Me.ComboBox2.Location = New System.Drawing.Point(50, 138)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(259, 21)
         Me.ComboBox2.TabIndex = 11
@@ -191,7 +171,7 @@ Partial Class AddMedicine
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(545, 401)
+        Me.ClientSize = New System.Drawing.Size(545, 386)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "AddMedicine"
         Me.Text = "AddMedicine"
@@ -201,8 +181,6 @@ Partial Class AddMedicine
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Dosage As Label
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents ComboBox1 As ComboBox
