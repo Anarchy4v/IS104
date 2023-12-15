@@ -1,11 +1,11 @@
-﻿Public Class SalesReport
-    ' Add a DataTable field to store order details
-    Private _orderDetails As DataTable
+﻿Imports System.Data.SqlClient
+Imports MySql.Data.MySqlClient
 
-    ' Constructor that accepts order details
-    Public Sub New(orderDetails As DataTable)
-        InitializeComponent()
-        _orderDetails = orderDetails
+Public Class SalesReport
+    Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
+
+    Private Sub SalesReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -37,5 +37,4 @@
             Form1.Show()
         End If
     End Sub
-
 End Class

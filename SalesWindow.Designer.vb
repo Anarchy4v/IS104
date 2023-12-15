@@ -128,13 +128,13 @@ Partial Class SalesWindow
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(36, 402)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(514, 16)
+        Me.Label7.Size = New System.Drawing.Size(453, 48)
         Me.Label7.TabIndex = 9
-        Me.Label7.Text = "Every successful transactions provides the Generated Receipt that cannot be retri" &
-    "eve."
+        Me.Label7.Text = "Every successful transaction provides the Generated " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Receipt that cannot be retr" &
+    "ieve."
         '
         'Label8
         '
