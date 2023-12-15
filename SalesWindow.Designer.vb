@@ -36,6 +36,7 @@ Partial Class SalesWindow
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -63,7 +64,7 @@ Partial Class SalesWindow
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.Label3.Location = New System.Drawing.Point(571, 223)
+        Me.Label3.Location = New System.Drawing.Point(571, 265)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(63, 26)
         Me.Label3.TabIndex = 2
@@ -73,7 +74,7 @@ Partial Class SalesWindow
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.Label4.Location = New System.Drawing.Point(571, 302)
+        Me.Label4.Location = New System.Drawing.Point(571, 344)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(88, 26)
         Me.Label4.TabIndex = 3
@@ -89,7 +90,7 @@ Partial Class SalesWindow
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(577, 264)
+        Me.TextBox1.Location = New System.Drawing.Point(577, 306)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(304, 20)
         Me.TextBox1.TabIndex = 5
@@ -108,7 +109,7 @@ Partial Class SalesWindow
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(751, 302)
+        Me.Label6.Location = New System.Drawing.Point(751, 344)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(67, 31)
         Me.Label6.TabIndex = 7
@@ -117,7 +118,7 @@ Partial Class SalesWindow
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(577, 351)
+        Me.Button1.Location = New System.Drawing.Point(577, 396)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(304, 39)
         Me.Button1.TabIndex = 8
@@ -130,9 +131,10 @@ Partial Class SalesWindow
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(36, 402)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(471, 16)
+        Me.Label7.Size = New System.Drawing.Size(514, 16)
         Me.Label7.TabIndex = 9
-        Me.Label7.Text = "By submitting the Generated Receipt will also been provided thru Sales Report"
+        Me.Label7.Text = "Every successful transactions provides the Generated Receipt that cannot be retri" &
+    "eve."
         '
         'Label8
         '
@@ -165,18 +167,29 @@ Partial Class SalesWindow
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(577, 397)
+        Me.Button2.Location = New System.Drawing.Point(577, 442)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(304, 39)
         Me.Button2.TabIndex = 13
         Me.Button2.Text = "Delete Record"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(571, 219)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(67, 31)
+        Me.Label10.TabIndex = 15
+        Me.Label10.Text = "0.00"
+        '
         'SalesWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(939, 465)
+        Me.ClientSize = New System.Drawing.Size(939, 518)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label8)
@@ -214,4 +227,5 @@ Partial Class SalesWindow
     Friend WithEvents Label9 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Button2 As Button
+    Friend WithEvents Label10 As Label
 End Class
