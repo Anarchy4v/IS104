@@ -7,6 +7,7 @@ Public Module SharedVariables
     Public Result As Decimal
     Public vatAmount As Decimal
     Public discount As Decimal
+    Public totalQty As Decimal
 End Module
 
 Public Class SalesWindow
@@ -35,7 +36,7 @@ Public Class SalesWindow
                     Using reader As MySqlDataReader = cmd.ExecuteReader()
                         DataGridView1.Rows.Clear()
                         Dim totalSalesPrice As Decimal = 0
-                        Dim totalQty As Integer = 0
+
 
                         While reader.Read()
                             DataGridView1.Rows.Add(
@@ -260,13 +261,17 @@ Public Class SalesWindow
         SharedVariables.vatAmount = Decimal.Parse(Label10.Text.Replace("VAT: ₱", "").Replace(",", "").Split(" "c)(0))
         SharedVariables.discount = GetDiscountValue()
 
-        'I need you to provide the VALUES of these following:
-        'order_id = ? (it can be added automatically its AUTO_INCREMENT in my DB)
-        'user_id = ? (it has a relationship to my user_id this is ID of the user the expected value is like (1 - eyelash@test.com)
+        ' Ask for confirmation before generating the receipt
+        Dim confirmationResult As DialogResult = MessageBox.Show("Do you want to generate the receipt? This cannot be undone", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-        ' Open CustomerGeneratedReport form
-        Dim customerReportForm As New CustomerGeneratedReport()
-        customerReportForm.Show()
+        If confirmationResult = DialogResult.Yes Then
+            ' Generate the receipt
+            InsertIntoSalesReport()
+
+            ' Open CustomerGeneratedReport form
+            Dim customerReportForm As New CustomerGeneratedReport()
+            customerReportForm.Show()
+        End If
     End Sub
 
     Private Function GetDiscountValue() As Decimal
@@ -283,4 +288,31 @@ Public Class SalesWindow
 
         Return discountValue
     End Function
+
+    Private Sub InsertIntoSalesReport()
+        Try
+            Using connection As New MySqlConnection(connectionString)
+                connection.Open()
+
+                ' Insert query
+                Dim insertQuery As String = "INSERT INTO salesreport (order_id, user_id, order_qty, total_price, discount) VALUES (@orderId, @userId, @orderQty, @totalPrice, @discount)"
+
+                ' Parameters for the insert query
+                Dim parameters As New List(Of MySqlParameter)
+                parameters.Add(New MySqlParameter("@orderId", DBNull.Value)) ' Auto-incremented ID, so we don't need to provide a value
+                parameters.Add(New MySqlParameter("@userId", 1)) ' Replace 1 with the actual user ID
+                parameters.Add(New MySqlParameter("@orderQty", totalQty)) ' Use the provided orderQty parameter
+                parameters.Add(New MySqlParameter("@totalPrice", cashValue)) ' Use the retrieved totalSalesPrice
+                parameters.Add(New MySqlParameter("@discount", GetDiscountValue())) ' Use the retrieved discount value
+
+                Using cmd As New MySqlCommand(insertQuery, connection)
+                    cmd.Parameters.AddRange(parameters.ToArray())
+                    cmd.ExecuteNonQuery()
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error inserting data into salesreport table: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
 End Class

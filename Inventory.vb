@@ -91,6 +91,9 @@ Public Class Inventory
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         'sales report
+        Dim SalesReport As New SalesReport()
+        SalesReport.Show()
+        Me.Close()
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click

@@ -79,14 +79,8 @@ Public Class Dash
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        ' Assuming you have a function to retrieve order details, replace it with the actual code
-        Dim orderDetails As DataTable = GetOrderDetails()
-
-        ' Open SalesReport form and pass the order details
-        Dim salesReportForm As New SalesReport(orderDetails)
-        salesReportForm.Show()
-
-        ' Close the current Dash form
+        Dim SalesReport As New SalesReport()
+        SalesReport.Show()
         Me.Close()
     End Sub
 

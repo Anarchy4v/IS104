@@ -175,4 +175,10 @@ Public Class Sales
             MessageBox.Show("Error reloading data: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim Inventor As New SalesReport()
+        Inventor.Show()
+        Me.Close()
+    End Sub
 End Class
