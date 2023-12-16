@@ -4,14 +4,14 @@ Public Module SharedSales
     Public SalesAmount As Decimal
     Public SalesTax As Decimal
     Public SalesTotal As Decimal
+    Public OrderSalesID As Integer
 End Module
 
 Public Class SalesReport
     Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
 
     Private Sub SalesReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Specify the user_id you want to retrieve data for
-        Dim userId As Integer = 1 ' Replace with the actual user_id
+        Dim userId As Integer = 1
 
         ' Create a MySqlConnection with the connection string
         Using connection As New MySqlConnection(connectionString)
@@ -38,11 +38,13 @@ Public Class SalesReport
 
                     ' Compute the total of @total_price column
                     Dim total As Decimal = 0
+                    Dim orderTotal As Integer = 0
 
                     For Each row As DataGridViewRow In DataGridView1.Rows
                         ' Check if the cell value is not empty and is a valid decimal
                         If Not row.Cells("total_price").Value Is Nothing AndAlso IsNumeric(row.Cells("total_price").Value) Then
                             total += Convert.ToDecimal(row.Cells("total_price").Value)
+                            orderTotal += Convert.ToInt32(row.Cells("order_id").Value)
                         End If
                     Next
 
@@ -50,11 +52,13 @@ Public Class SalesReport
                     Dim vatAmount As Decimal = total * vatPercentage
                     Dim userEmail As String = GetUserEmail(connection)
                     Dim salesTotal As Decimal = vatAmount + total
+                    Dim salesID As Integer = orderTotal
 
                     ' Update the SharedSales module variables
                     SharedSales.SalesAmount = total
                     SharedSales.SalesTax = vatAmount
                     SharedSales.SalesTotal = salesTotal
+                    SharedSales.OrderSalesID = salesID
 
                     Label11.Text = userEmail
                     Label6.Text = total.ToString("C", New System.Globalization.CultureInfo("en-PH"))
