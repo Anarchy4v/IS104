@@ -106,7 +106,7 @@ Partial Class SalesGenerateReport
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(226, 3)
+        Me.Label4.Location = New System.Drawing.Point(240, 3)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(66, 24)
         Me.Label4.TabIndex = 1
@@ -135,7 +135,7 @@ Partial Class SalesGenerateReport
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(226, 3)
+        Me.Label6.Location = New System.Drawing.Point(240, 3)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(66, 24)
         Me.Label6.TabIndex = 1
@@ -164,7 +164,7 @@ Partial Class SalesGenerateReport
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(226, 3)
+        Me.Label8.Location = New System.Drawing.Point(240, 3)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(66, 24)
         Me.Label8.TabIndex = 1
@@ -204,6 +204,7 @@ Partial Class SalesGenerateReport
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Name = "SalesGenerateReport"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SalesGenerateReport"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)

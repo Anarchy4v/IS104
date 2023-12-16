@@ -22,7 +22,6 @@ Partial Class Dash
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dash))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
@@ -61,7 +60,6 @@ Partial Class Dash
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -349,7 +347,7 @@ Partial Class Dash
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(6, 31)
+        Me.Label10.Location = New System.Drawing.Point(3, 31)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(29, 31)
         Me.Label10.TabIndex = 3
@@ -359,7 +357,7 @@ Partial Class Dash
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(10, 8)
+        Me.Label6.Location = New System.Drawing.Point(3, 8)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(87, 13)
         Me.Label6.TabIndex = 2
@@ -390,11 +388,11 @@ Partial Class Dash
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(7, 9)
+        Me.Label5.Location = New System.Drawing.Point(4, 9)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(102, 13)
+        Me.Label5.Size = New System.Drawing.Size(70, 13)
         Me.Label5.TabIndex = 1
-        Me.Label5.Text = "Statistics Purchases"
+        Me.Label5.Text = "Statistics Tax"
         '
         'Panel5
         '
@@ -421,11 +419,11 @@ Partial Class Dash
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(6, 9)
+        Me.Label4.Location = New System.Drawing.Point(3, 9)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(78, 13)
+        Me.Label4.Size = New System.Drawing.Size(108, 13)
         Me.Label4.TabIndex = 1
-        Me.Label4.Text = "Statistics Sales"
+        Me.Label4.Text = "Statistics Transaction"
         '
         'Panel4
         '
@@ -452,7 +450,7 @@ Partial Class Dash
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(8, 10)
+        Me.Label3.Location = New System.Drawing.Point(3, 10)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(96, 13)
         Me.Label3.TabIndex = 0
@@ -467,10 +465,6 @@ Partial Class Dash
         Me.Label1.Size = New System.Drawing.Size(143, 29)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Dashboard"
-        '
-        'Timer1
-        '
-        Me.Timer1.Interval = 2000
         '
         'Dash
         '
@@ -534,7 +528,6 @@ Partial Class Dash
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Timer1 As Timer
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label13 As Label

@@ -136,3 +136,4 @@ E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.SalesWindow.resources
 E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.CustomerGeneratedReport.resources
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.CustomerGeneratedReport.resources
 C:\Users\rogu\Desktop\IS104\obj\Debug\PharmacyandMedicine.SalesGenerateReport.resources
+E:\Users\rogu\Desktop\SAD-IS\obj\Debug\PharmacyandMedicine.SalesGenerateReport.resources

@@ -1,5 +1,4 @@
-﻿Imports System.Security.Cryptography.X509Certificates
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Public Module SharedVariables
     Public totalSalesPrice As Decimal
@@ -13,7 +12,7 @@ End Module
 Public Class SalesWindow
     Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
     Public Shared salesWindowInstance As SalesWindow
-    Private totalAmount As Decimal
+    Public totalAmount As Decimal
     Private totalSalesPrice As Decimal
 
     'this is needed because it references to my ModalOrderSales2
