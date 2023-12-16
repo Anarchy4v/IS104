@@ -1,19 +1,19 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Module SharedVariables
-    Public totalSalesPrice As Decimal
+    Public totalAmount2 As Decimal
     Public cashValue As Decimal
     Public Result As Decimal
     Public vatAmount As Decimal
     Public discount As Decimal
     Public totalQty As Decimal
+    Public OrderID As Integer
 End Module
 
 Public Class SalesWindow
     Private connectionString As String = "server=127.0.0.1;userid=root;password='';database=tgp_db"
     Public Shared salesWindowInstance As SalesWindow
     Public totalAmount As Decimal
-    Private totalSalesPrice As Decimal
 
     'this is needed because it references to my ModalOrderSales2
     Public Class OrderDetails
@@ -254,11 +254,17 @@ Public Class SalesWindow
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         ' Save relevant data to SharedVariables
-        SharedVariables.totalSalesPrice = totalSalesPrice
+        SharedVariables.totalAmount2 = totalAmount
         SharedVariables.cashValue = Decimal.Parse(TextBox1.Text)
         SharedVariables.Result = Decimal.Parse(Label6.Text.Replace("₱", "").Replace(",", "").Trim())
         SharedVariables.vatAmount = Decimal.Parse(Label10.Text.Replace("VAT: ₱", "").Replace(",", "").Split(" "c)(0))
         SharedVariables.discount = GetDiscountValue()
+
+        ' Generate a new OrderID (replace this with your logic to get a unique ID)
+        Dim newOrderId As Integer = GenerateNewOrderId()
+
+        ' Set the new OrderID to SharedVariables
+        SharedVariables.OrderID = newOrderId
 
         ' Ask for confirmation before generating the receipt
         Dim confirmationResult As DialogResult = MessageBox.Show("Do you want to generate the receipt? This cannot be undone", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -314,4 +320,32 @@ Public Class SalesWindow
         End Try
     End Sub
 
+    'It tells to read the total number of Auto-Increment attribute like @sales_id
+    Public Function GenerateNewOrderId() As Integer
+        Try
+            Using connection As New MySqlConnection(connectionString)
+                connection.Open()
+
+                ' Get the next auto-increment value for the salesreport table
+                Dim query As String = "SHOW TABLE STATUS LIKE 'salesreport'"
+                Using cmd As New MySqlCommand(query, connection)
+                    Dim reader As MySqlDataReader = cmd.ExecuteReader()
+
+                    If reader.Read() Then
+                        Dim newOrderId As Integer = Convert.ToInt32(reader("Auto_increment"))
+                        reader.Close()
+                        Return newOrderId
+                    Else
+                        reader.Close()
+                        MessageBox.Show("Error retrieving new OrderID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        Return 0
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error generating new OrderID: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ' Handle the error accordingly
+            Return 0
+        End Try
+    End Function
 End Class

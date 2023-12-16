@@ -17,8 +17,9 @@ Public Class CustomerGeneratedReport
         LoadDataIntoDataGridView()
 
         ' Display data from SharedVariables
+        Label3.Text = $"{SharedVariables.OrderID}"
         Label5.Text = $"{SharedVariables.discount:P}"
-        Label7.Text = $"₱{SharedVariables.totalSalesPrice:N2}"
+        Label7.Text = $"₱{SharedVariables.totalAmount2:N2}"
         Label9.Text = $"₱{SharedVariables.cashValue:N2}"
         Label11.Text = $"₱{SharedVariables.Result:N2}"
         Label13.Text = $"₱{SharedVariables.vatAmount:N2}"
@@ -63,4 +64,5 @@ Public Class CustomerGeneratedReport
             End Try
         End If
     End Sub
+
 End Class
