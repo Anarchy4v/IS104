@@ -26,7 +26,6 @@ Partial Class SalesGenerateReport
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -37,6 +36,7 @@ Partial Class SalesGenerateReport
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -82,16 +82,6 @@ Partial Class SalesGenerateReport
         Me.Label1.Size = New System.Drawing.Size(48, 24)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Date"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(125, 108)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(151, 24)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "SALES INVOICE"
         '
         'Panel1
         '
@@ -184,12 +174,22 @@ Partial Class SalesGenerateReport
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(102, 355)
+        Me.Label15.Location = New System.Drawing.Point(36, 350)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(197, 48)
+        Me.Label15.Size = New System.Drawing.Size(323, 24)
         Me.Label15.TabIndex = 15
-        Me.Label15.Text = "This receipt is only for " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sales Provider" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label15.Text = "This receipt is for Sales Provider only."
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(125, 112)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(151, 24)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "SALES INVOICE"
         '
         'SalesGenerateReport
         '
@@ -224,7 +224,6 @@ Partial Class SalesGenerateReport
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
@@ -235,4 +234,5 @@ Partial Class SalesGenerateReport
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label15 As Label
+    Friend WithEvents Label3 As Label
 End Class
