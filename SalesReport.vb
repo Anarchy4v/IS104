@@ -58,7 +58,6 @@ Public Class SalesReport
                     SharedSales.SalesAmount = total
                     SharedSales.SalesTax = vatAmount
                     SharedSales.SalesTotal = salesTotal
-                    SharedSales.OrderSalesID = salesID
 
                     Label11.Text = userEmail
                     Label6.Text = total.ToString("C", New System.Globalization.CultureInfo("en-PH"))
