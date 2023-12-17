@@ -14,3 +14,11 @@ This system it dedicates to The Generics Pharmacy (Ang TGPagpagaling ng Pilipina
 1. Make sure you already have the MySQL connector with NuGet Package much better because you may only need to execute in your command line the updated version you may get thru NuGet Website.
 2. Transparentcy
 3. Peace of Mind (don't just ask to ask)
+
+## Realtime Status
+
+This system only relies to Academic Activity so as expected the system itself cannot guarantee to engage for real in short it has so many lack of important features such as Error Handling, Providing the Print Generated Layout for specific Windows Form and so much more.
+
+Don't fucking consider this has good taste I hate programming in Visual Basic for some reason
+
+Written by Kenneth Obsequio (@lash0000)
